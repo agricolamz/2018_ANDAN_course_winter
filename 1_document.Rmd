@@ -1,6 +1,6 @@
 ---
 title: "1. RMarkdown документ"
-author: "Г. Мороз <br> Презентация доступна по ссылке: "
+author: "Г. Мороз <br> Презентация доступна по ссылке: goo.gl/371MkL"
 ---
 
 ```{r setup, include=FALSE}
