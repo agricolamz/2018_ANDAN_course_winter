@@ -1,0 +1,39 @@
+---
+title: "1. RMarkdown документ"
+author: "Г. Мороз <br> Презентация доступна по ссылке: "
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+```
+
+<style>
+.parallax {
+    /* The image used */
+    background-image: url("1_logo.jpg");
+
+    /* Set a specific height */
+    min-height: 350px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+</style>
+
+<div class="parallax"></div>
+
+## 0. Как добыть R и Rstudio
+
+Бесплатное программное обеспечение:
+
+* [R](https://cran.r-project.org/)
+* [RStudio](https://www.rstudio.com/products/rstudio/download/#download)
+* Если не хочется ставить сторонние программы:
+    * [RStudio Cloud](https://rstudio.cloud/)
+    * [rollApp](https://www.rollapp.com/app/rstudio)
+
+<div class="parallax"></div>
+
