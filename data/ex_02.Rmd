@@ -51,8 +51,8 @@ alert(s);
   <dt>Чистый HTML</dt>
   <dd>Еще можно писать в HTML.</dd>
 
-  <dt>но Markdown в  HTML </dt>
-  <dd> работает *не* **правильно**. Нужно использовать <em>теги</em>.</dd>
+  <dt>и Markdown в  HTML </dt>
+  <dd> даже работает **правильно**. Но можно использовать и <em>теги</em>.</dd>
 </dl>
 
 [1]: https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html
