@@ -33,21 +33,39 @@ install.packages("rmarkdown")
 
 <div class="parallax"></div>
 
-## 1. Первый маркдаун {.tabset .tabset-fade .tabset-pills}
+## 1.1 Первый R markdown {.tabset .tabset-fade .tabset-pills}
 Создайте файл .Rmd в какой-нибудь папке. Скомпелировать файл можно командой:
 ```{r, eval=FALSE}
 rmarkdown::render("ваш_файл.Rmd")
 ```
 
 ### code
-
 ```{bash, echo = FALSE}
-cat ./data/1_ex.Rmd
+cat ./data/ex_01.Rmd
 ```
 
 ### result
-
-<iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/1_ex.html" width = 700 height = 450>
+<iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_01.html" width = 700 height = 450>
   <p>Your browser does not support iframes.</p>
 </iframe>
 
+## 1.2 Составляющие R markdown
+
+* [yaml](https://en.wikipedia.org/wiki/YAML) шапка
+* обычный текст с [markdown](https://en.wikipedia.org/wiki/Markdown) форматированием (расширенный при помощи [Pandoc](https://en.wikipedia.org/wiki/Pandoc))
+* фрагменты кода (не обязательно на языке R)
+
+<div class="parallax"></div>
+
+## 2 Markdown {.tabset .tabset-fade .tabset-pills}
+Универсальны язык разметки, работает во многих современных он-лайн системах создания текста.
+
+### code
+```{bash, echo = FALSE}
+cat ./data/ex_02.Rmd
+```
+
+### result
+<iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_02.html" width = 700 height = 450>
+  <p>Your browser does not support iframes.</p>
+</iframe>

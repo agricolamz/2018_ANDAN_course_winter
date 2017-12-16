@@ -361,8 +361,8 @@ div.tocify {
 
 </div>
 </div>
-<div id="-" class="section level2 tabset tabset-fade tabset-pills">
-<h2>1. Первый маркдаун</h2>
+<div id="-r-markdown" class="section level2 tabset tabset-fade tabset-pills">
+<h2>1.1 Первый R markdown</h2>
 <p>Создайте файл .Rmd в какой-нибудь папке. Скомпелировать файл можно командой:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">rmarkdown::<span class="kw">render</span>(<span class="st">&quot;ваш_файл.Rmd&quot;</span>)</code></pre></div>
 <div id="code" class="section level3">
@@ -388,7 +388,85 @@ plot(iris$Sepal.Length)
 </div>
 <div id="result" class="section level3">
 <h3>result</h3>
-<iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/1_ex.html" width="700" height="450">
+<iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_01.html" width="700" height="450">
+<p>
+Your browser does not support iframes.
+</p>
+</iframe>
+</div>
+</div>
+<div id="-r-markdown" class="section level2">
+<h2>1.2 Составляющие R markdown</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/YAML">yaml</a> шапка</li>
+<li>обычный текст с <a href="https://en.wikipedia.org/wiki/Markdown">markdown</a> форматированием (расширенный при помощи <a href="https://en.wikipedia.org/wiki/Pandoc">Pandoc</a>)</li>
+<li>фрагменты кода (не обязательно на языке R)</li>
+</ul>
+<div class="parallax">
+
+</div>
+</div>
+<div id="markdown" class="section level2 tabset tabset-fade tabset-pills">
+<h2>2 Markdown</h2>
+<p>Универсальны язык разметки, работает во многих современных он-лайн системах создания текста.</p>
+<div id="code-1" class="section level3">
+<h3>code</h3>
+<pre><code>---
+output: html_document
+---
+
+## Заголовок уровня 2
+#### Заголовок уровня 4
+_италик_ или *другой италик*
+
+__жирный__ или **другой жирный**
+
+~~зачеркивание~~
+
+* кролик
+* заяц
+    * заяц серый
+
+1. машины
+    1. автобус
+2. самолеты
+
++ можно еще ставить плюс
+- и минус
+
+[Ссылка 1](https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html)
+
+&lt;https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html&gt;
+
+[Можно вставить ссылку потом, а пока отсавить метку][1]
+
+Или даже просто голую [метку].
+
+![](https://raw.githubusercontent.com/agricolamz/2018_ANDAN_course_winter/master/rmarkdown.png)
+
+Опять же можно вставить только метку ![][2]
+
+Код нужно оформалять вот так `rmarkdown::render()`
+
+```javascript
+var s = &quot;подсветка синтаксиса JavaScript&quot;;
+alert(s);
+```
+
+&gt; Цитаты нужно офрмлять так.
+&gt; Это попадет в тот же фрагмент.
+
+&gt; А вот тут произошел разрыв. Кстати, здесь тоже можно использовать *markdown*.
+
+
+
+[1]: https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html
+[метку]: https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html
+[2]: https://raw.githubusercontent.com/agricolamz/2018_ANDAN_course_winter/master/rmarkdown.png</code></pre>
+</div>
+<div id="result-1" class="section level3">
+<h3>result</h3>
+<iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_02.html" width="700" height="450">
 <p>
 Your browser does not support iframes.
 </p>
