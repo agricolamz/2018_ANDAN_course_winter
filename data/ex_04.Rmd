@@ -8,7 +8,6 @@ plot(mtcars$mpg)
 ```
 
 Только результат
-
 ```{r, echo = FALSE}
 plot(mtcars$mpg)
 ```
@@ -18,7 +17,7 @@ plot(mtcars$mpg)
 plot(mtcars$mpg)
 ```
 
-Исполняется, но не показывается, ни код, ни результат
+Исполняется, но не показывается ни код, ни результат
 ```{r, include = FALSE}
 a <- mtcars$mpg
 ```

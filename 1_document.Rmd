@@ -276,7 +276,30 @@ cat ./data/ex_04.Rmd
   <p>Your browser does not support iframes.</p>
 </iframe>
 
+### 4.3 Другие полезные аргументы {.tabset .tabset-fade .tabset-pills}
 
+Существует достаточно [много аргументов](https://yihui.name/knitr/options/#chunk_options), которые можно перечислить в фигурных скобках в фрагменте кода, я перечислю лишь некоторые:
+
+* `error`: показывать ли ошибки.
+* `warning`: показывать ли предупреждения.
+* `message`: показывать ли сообщения (например, при подключении пакетов).
+* `comment`: по умолчанию, результат работы кода предваряется знаком `##`, используйте `NA`, чтобы их не было или любую другую строку.
+* `background`:  цвет фона (по умолчанию, '#F7F7F7').
+* `cache`: сохранить ли результат работы фрагмента кода. Очень полезно, если происходят какие-то операции, занимающая много времени. Сохранив результат, не нужно будет тратить время, на пересчет, при каждой новой компиляции.
+* `fig.width`, `fig.height` (по умолчанию, 7)
+
+Все эти аргументы можно перечислить в функции `knitr::opts_chunk$set(...)`:
+
+#### code
+```{bash, echo = FALSE}
+cat ./data/ex_05.Rmd
+```
+<div class="parallax"></div>
+
+#### result
+<iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_05.html" width = 700 height = 450>
+  <p>Your browser does not support iframes.</p>
+</iframe>
 <div class="parallax"></div>
 
 ## 5 YAML шапка

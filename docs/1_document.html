@@ -641,7 +641,6 @@ plot(mtcars$mpg)
 ```
 
 Только результат
-
 ```{r, echo = FALSE}
 plot(mtcars$mpg)
 ```
@@ -651,7 +650,7 @@ plot(mtcars$mpg)
 plot(mtcars$mpg)
 ```
 
-Исполняется, но не показывается, ни код, ни результат
+Исполняется, но не показывается ни код, ни результат
 ```{r, include = FALSE}
 a &lt;- mtcars$mpg
 ```
@@ -664,6 +663,60 @@ a
 <div id="result-2" class="section level4">
 <h4>result</h4>
 <iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_04.html" width="700" height="450">
+<p>
+Your browser does not support iframes.
+</p>
+</iframe>
+</div>
+</div>
+<div id="--" class="section level3 tabset tabset-fade tabset-pills">
+<h3>4.3 Другие полезные аргументы</h3>
+<p>Существует достаточно <a href="https://yihui.name/knitr/options/#chunk_options">много аргументов</a>, которые можно перечислить в фигурных скобках в фрагменте кода, я перечислю лишь некоторые:</p>
+<ul>
+<li><code>error</code>: показывать ли ошибки.</li>
+<li><code>warning</code>: показывать ли предупреждения.</li>
+<li><code>message</code>: показывать ли сообщения (например, при подключении пакетов).</li>
+<li><code>comment</code>: по умолчанию, результат работы кода предваряется знаком <code>##</code>, используйте <code>NA</code>, чтобы их не было или любую другую строку.</li>
+<li><code>background</code>: цвет фона (по умолчанию, ‘#F7F7F7’).</li>
+<li><code>cache</code>: сохранить ли результат работы фрагмента кода. Очень полезно, если происходят какие-то операции, занимающая много времени. Сохранив результат, не нужно будет тратить время, на пересчет, при каждой новой компиляции.</li>
+<li><code>fig.width</code>, <code>fig.height</code> (по умолчанию, 7)</li>
+</ul>
+<p>Все эти аргументы можно перечислить в функции <code>knitr::opts_chunk$set(...)</code>:</p>
+<div id="code-3" class="section level4">
+<h4>code</h4>
+<pre><code>---
+output: html_document
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, fig.height = 3)
+```
+
+Первый фрагмент
+
+```{r}
+library(tidyverse)
+diamonds %&gt;% 
+  count(carat, color) %&gt;%
+  ggplot(aes(carat, n, color = color))+
+  geom_point()
+```
+
+Второй фрагмент
+
+```{r}
+diamonds %&gt;% 
+  count(cut, color) %&gt;%
+  ggplot(aes(cut, n, color = color))+
+  geom_point()
+```</code></pre>
+<div class="parallax">
+
+</div>
+</div>
+<div id="result-3" class="section level4">
+<h4>result</h4>
+<iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_05.html" width="700" height="450">
 <p>
 Your browser does not support iframes.
 </p>
