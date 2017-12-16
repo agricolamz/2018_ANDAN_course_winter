@@ -247,6 +247,38 @@ $\LaTeX$  код может быть в тексте $\frac{\pi}{\sum{n+1}}$ и�
 
 $$\frac{\pi}{\sum{n+1}}$$
 
-## 4 YAML шапка
+<div class="parallax"></div>
 
-## 5 Code chunks
+## 4 Code chunks
+
+Фрагменты кода имеют свои наборы свойств, который можно записывать в фигурных скобках.
+
+### 4.1 Язык программирования {.tabset .tabset-fade .tabset-pills}
+#### code
+```{bash, echo = FALSE}
+cat ./data/ex_03.Rmd
+```
+
+#### result
+<iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_03.html" width = 700 height = 450>
+  <p>Your browser does not support iframes.</p>
+</iframe>
+
+
+### 4.2 Появление и исполнение кода {.tabset .tabset-fade .tabset-pills}
+#### code
+```{bash, echo = FALSE}
+cat ./data/ex_04.Rmd
+```
+
+#### result
+<iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_04.html" width = 700 height = 450>
+  <p>Your browser does not support iframes.</p>
+</iframe>
+
+
+<div class="parallax"></div>
+
+## 5 YAML шапка
+
+<div class="parallax"></div>

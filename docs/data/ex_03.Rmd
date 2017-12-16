@@ -1,0 +1,18 @@
+---
+output: html_document
+---
+
+```{r}
+summary(cars)
+```
+
+```{bash}
+mkdir my_new_folder
+ls
+rm -d my_new_folder
+```
+
+```{python3}
+x = "моя строка"
+print(x.split(" "))
+```

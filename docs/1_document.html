@@ -587,13 +587,98 @@ alert(s);
 $$\frac{\pi}{\sum{n+1}}$$</code></pre>
 <p><span class="math inline">\(\LaTeX\)</span> код может быть в тексте <span class="math inline">\(\frac{\pi}{\sum{n+1}}\)</span> или отдельной строчкой:</p>
 <p><span class="math display">\[\frac{\pi}{\sum{n+1}}\]</span></p>
+<div class="parallax">
+
+</div>
+</div>
+</div>
+<div id="code-chunks" class="section level2">
+<h2>4 Code chunks</h2>
+<p>Фрагменты кода имеют свои наборы свойств, который можно записывать в фигурных скобках.</p>
+<div id="-" class="section level3 tabset tabset-fade tabset-pills">
+<h3>4.1 Язык программирования</h3>
+<div id="code-1" class="section level4">
+<h4>code</h4>
+<pre><code>---
+output: html_document
+---
+
+```{r}
+summary(cars)
+```
+
+```{bash}
+mkdir my_new_folder
+ls
+rm -d my_new_folder
+```
+
+```{python3}
+x = &quot;моя строка&quot;
+print(x.split(&quot; &quot;))
+```</code></pre>
+</div>
+<div id="result-1" class="section level4">
+<h4>result</h4>
+<iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_03.html" width="700" height="450">
+<p>
+Your browser does not support iframes.
+</p>
+</iframe>
+</div>
+</div>
+<div id="---" class="section level3 tabset tabset-fade tabset-pills">
+<h3>4.2 Появление и исполнение кода</h3>
+<div id="code-2" class="section level4">
+<h4>code</h4>
+<pre><code>---
+output: html_document
+---
+
+И код, и результат
+```{r}
+plot(mtcars$mpg)
+```
+
+Только результат
+
+```{r, echo = FALSE}
+plot(mtcars$mpg)
+```
+
+Только код
+```{r, eval = FALSE}
+plot(mtcars$mpg)
+```
+
+Исполняется, но не показывается, ни код, ни результат
+```{r, include = FALSE}
+a &lt;- mtcars$mpg
+```
+
+Обратимся к переменной, созданной в фрагменте с аргументом `include = FALSE`
+```{r}
+a
+```</code></pre>
+</div>
+<div id="result-2" class="section level4">
+<h4>result</h4>
+<iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_04.html" width="700" height="450">
+<p>
+Your browser does not support iframes.
+</p>
+</iframe>
+<div class="parallax">
+
+</div>
+</div>
 </div>
 </div>
 <div id="yaml-" class="section level2">
-<h2>4 YAML шапка</h2>
+<h2>5 YAML шапка</h2>
+<div class="parallax">
+
 </div>
-<div id="code-chunks" class="section level2">
-<h2>5 Code chunks</h2>
 </div>
 <div class="footnotes">
 <hr />
