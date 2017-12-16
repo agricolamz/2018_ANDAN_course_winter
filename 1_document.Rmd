@@ -47,7 +47,7 @@ cat ./data/1_ex.Rmd
 
 ### result
 
-<iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/1_ex.html" width = 700 height = 500>
+<iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/1_ex.html" width = 700 height = 450>
   <p>Your browser does not support iframes.</p>
 </iframe>
 
