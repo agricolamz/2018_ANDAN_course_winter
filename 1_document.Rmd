@@ -25,7 +25,7 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE, comment=NA)
 
 <div class="parallax"></div>
 
-## 0. Установите `rmarkdown`
+## 0 Установите `rmarkdown`
 
 ```{r, eval= FALSE}
 install.packages("rmarkdown")
@@ -33,39 +33,220 @@ install.packages("rmarkdown")
 
 <div class="parallax"></div>
 
-## 1.1 Первый R markdown {.tabset .tabset-fade .tabset-pills}
-Создайте файл .Rmd в какой-нибудь папке. Скомпелировать файл можно командой:
-```{r, eval=FALSE}
-rmarkdown::render("ваш_файл.Rmd")
-```
-
-### code
-```{bash, echo = FALSE}
-cat ./data/ex_01.Rmd
-```
-
-### result
-<iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_01.html" width = 700 height = 450>
-  <p>Your browser does not support iframes.</p>
-</iframe>
-
-## 1.2 Составляющие R markdown
+## 1 Первый R markdown
+### 1.2 Составляющие R markdown
 
 * [yaml](https://en.wikipedia.org/wiki/YAML) шапка
 * обычный текст с [markdown](https://en.wikipedia.org/wiki/Markdown) форматированием (расширенный при помощи [Pandoc](https://en.wikipedia.org/wiki/Pandoc))
 * фрагменты кода (не обязательно на языке R)
 
+### 1.1 Пример R markdown {.tabset .tabset-fade .tabset-pills}
+Создайте файл .Rmd в какой-нибудь папке. Скомпелировать файл можно командой:
+```{r, eval=FALSE}
+rmarkdown::render("ваш_файл.Rmd")
+```
+
+#### code
+```{bash, echo = FALSE}
+cat ./data/ex_01.Rmd
+```
+
 <div class="parallax"></div>
 
-## 2 Markdown {.tabset .tabset-fade .tabset-pills}
+#### result
+<iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_01.html" width = 700 height = 450>
+  <p>Your browser does not support iframes.</p>
+</iframe>
+
+<div class="parallax"></div>
+
+## 2 `Markdown`
 Универсальны язык разметки, работает во многих современных он-лайн системах создания текста.
 
-### code
+### 2.1 Заголовки
+
+```
+## Заголовок уровня 2
+#### Заголовок уровня 4
+```
+
+### 2.2 Форматирование
+```
+_италик_ или *другой италик*
+
+__жирный__ или **другой жирный**
+
+~~зачеркивание~~
+```
+_италик_ или *другой италик*
+
+__жирный__ или **другой жирный**
+
+~~зачеркивание~~
+
+### 2.3 Списки
+```
+* кролик
+* заяц
+    * заяц серый
+
+1. машины
+    1. автобус
+2. самолеты
+
++ можно еще ставить плюс
+- и минус
+```
+* кролик
+* заяц
+    * заяц серый
+
+1. машины
+    1. автобус
+2. самолеты
+
++ можно еще ставить плюс
+- и минус
+
+### 2.4 Ссылки и картинки
+```
+[Ссылка 1](https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html)
+
+<https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html>
+
+[Можно вставить ссылку потом, а пока отсавить метку][1]
+
+Или даже просто голую [метку].
+
+![](https://raw.githubusercontent.com/agricolamz/2018_ANDAN_course_winter/master/rmarkdown.png)
+
+Опять же можно вставить только метку ![][2]
+
+[1]: https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html
+[метку]: https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html
+[2]: https://raw.githubusercontent.com/agricolamz/2018_ANDAN_course_winter/master/rmarkdown.png
+```
+[Ссылка 1](https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html)
+
+<https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html>
+
+[Можно вставить ссылку потом, а пока отсавить метку][1]
+
+Или даже просто голую [метку].
+
+![](https://raw.githubusercontent.com/agricolamz/2018_ANDAN_course_winter/master/rmarkdown.png)
+
+Опять же можно вставить только метку ![][2]
+
+[1]: https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html
+[метку]: https://agricolamz.github.io/2018_ANDAN_course_winter/2_ex.html
+[2]: https://raw.githubusercontent.com/agricolamz/2018_ANDAN_course_winter/master/rmarkdown.png
+
+### 2.5 Код
+
+```
+Код нужно оформалять вот так `rmarkdown::render()`
+```
+Код нужно оформалять вот так `rmarkdown::render()`
+
 ```{bash, echo = FALSE}
 cat ./data/ex_02.Rmd
 ```
 
-### result
-<iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_02.html" width = 700 height = 450>
-  <p>Your browser does not support iframes.</p>
-</iframe>
+```{javascript}
+var s = "подсветка синтаксиса JavaScript";
+alert(s);
+```
+
+Фигурные скобки не обязательны, но тогда RStudio подсветит.
+
+### 2.6 Цитаты
+```
+> Цитаты нужно офрмлять так.
+> Это попадет в тот же фрагмент.
+
+> А вот тут произошел разрыв. Кстати, здесь тоже можно использовать *markdown*.
+```
+
+> Цитаты нужно офрмлять так.
+> Это попадет в тот же фрагмент.
+
+> А вот тут произошел разрыв. Кстати, здесь тоже можно использовать *markdown*.
+
+
+### 2.7 Разрыв страницы
+```
+***
+```
+
+***
+
+### 2.8 HTML
+```
+<dl>
+  <dt>Чистый HTML</dt>
+  <dd>Еще можно писать в HTML.</dd>
+
+  <dt>и Markdown в  HTML </dt>
+  <dd> даже работает **правильно**. Но можно использовать и <em>теги</em>.</dd>
+</dl>
+```
+<dl>
+  <dt>Чистый HTML</dt>
+  <dd>Еще можно писать в HTML.</dd>
+
+  <dt>и Markdown в  HTML </dt>
+  <dd> даже работает **правильно**. Но можно использовать и <em>теги</em>.</dd>
+</dl>
+
+### 2.9 Таблицы
+Еще есть целая наука как делать таблицы в Markdown, но я предпочитаю использовать [он-лайн генератор](http://www.tablesgenerator.com/markdown_tables).
+
+<div class="parallax"></div>
+
+## 3 `Pandoc` {.tabset .tabset-fade .tabset-pills}
+[`Pandoc`](https://pandoc.org/) это программа, созданная [Дж. МакФарлэйном (J. MacFarlane)](johnmacfarlane.net), которая позволяет переходить из разных текстовых форматов в другие, а также смешивать их. Я покожу лишь несколько полезных расширений.
+
+### 3.1 Верхние и нижние индексы
+```
+2^10^ C~k~
+```
+2^10^ C~n~^k^
+
+### 3.2 Нумерованные примеры
+```
+(@) Славный пример номер раз.
+(@) Славный пример номер два.
+(@three) Славный пример номер три, у которого есть *имя*.
+
+Я могу сослаться на пример (@three)!
+```
+(@) Славный пример номер раз.
+(@) Славный пример номер два.
+(@three) Славный пример номер три, у которого есть *имя*.
+
+Я могу сослаться на пример (@three)!
+
+### 3.3 Сноски
+```
+Вот и сноска[^1]
+
+[^1]: Сноска, сноска, сноска.
+```
+Вот и сноска[^1]
+
+[^1]: Сноска, сноска, сноска.
+
+### 3.4 Математика: $\LaTeX$
+```
+$\LaTeX$  код может быть в тексте $\frac{\pi}{\sum{n+1}}$ или отдельной строчкой:
+
+$$\frac{\pi}{\sum{n+1}}$$
+```
+$\LaTeX$  код может быть в тексте $\frac{\pi}{\sum{n+1}}$ или отдельной строчкой:
+
+$$\frac{\pi}{\sum{n+1}}$$
+
+## 4 YAML шапка
+
+## 5 Code chunks
