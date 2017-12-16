@@ -294,12 +294,29 @@ cat ./data/ex_04.Rmd
 ```{bash, echo = FALSE}
 cat ./data/ex_05.Rmd
 ```
-<div class="parallax"></div>
 
 #### result
 <iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_05.html" width = 700 height = 450>
   <p>Your browser does not support iframes.</p>
 </iframe>
+
+### 4.4 Pets or livestock?
+В RMarkdown каждому фрагменту кода можно дать имя (но избегайте пробелов и точек):
+```{r my_beautiful_graph, eval = FALSE}
+library(tidyverse)
+diamonds %>% 
+  count(carat, color) %>%
+  ggplot(aes(carat, n, color = color))+
+  geom_point()
+```
+
+Maëlle Salmon написал [отличный пост](http://www.masalmon.eu/2017/08/08/chunkpets/), почему полезно именовать фрагменты кода:
+
+* проще ориентироваться
+* код более читаемый
+* ошибки при компеляции показывают имя, а не номер
+* если фрагмент кэшировался, то добавление одного фрагменты перед ним, заставит все пересчитываться.
+
 <div class="parallax"></div>
 
 ## 5 YAML шапка

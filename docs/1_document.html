@@ -710,9 +710,6 @@ diamonds %&gt;%
   ggplot(aes(cut, n, color = color))+
   geom_point()
 ```</code></pre>
-<div class="parallax">
-
-</div>
 </div>
 <div id="result-3" class="section level4">
 <h4>result</h4>
@@ -721,9 +718,25 @@ diamonds %&gt;%
 Your browser does not support iframes.
 </p>
 </iframe>
+</div>
+</div>
+<div id="pets-or-livestock" class="section level3">
+<h3>4.4 Pets or livestock?</h3>
+<p>В RMarkdown каждому фрагменту кода можно дать имя (но избегайте пробелов и точек):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
+diamonds %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">count</span>(carat, color) %&gt;%
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(carat, n, <span class="dt">color =</span> color))+
+<span class="st">  </span><span class="kw">geom_point</span>()</code></pre></div>
+<p>Maëlle Salmon написал <a href="http://www.masalmon.eu/2017/08/08/chunkpets/">отличный пост</a>, почему полезно именовать фрагменты кода:</p>
+<ul>
+<li>проще ориентироваться</li>
+<li>код более читаемый</li>
+<li>ошибки при компеляции показывают имя, а не номер</li>
+<li>если фрагмент кэшировался, то добавление одного фрагменты перед ним, заставит все пересчитываться.</li>
+</ul>
 <div class="parallax">
 
-</div>
 </div>
 </div>
 </div>
