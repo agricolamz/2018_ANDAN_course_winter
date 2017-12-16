@@ -4,13 +4,13 @@ author: "Г. Мороз <br> Презентация доступна по ссы
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, comment=NA)
 ```
 
 <style>
 .parallax {
     /* The image used */
-    background-image: url("1_logo.jpg");
+    background-image: url("rmarkdown.png");
 
     /* Set a specific height */
     min-height: 350px; 
@@ -25,15 +25,29 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE)
 
 <div class="parallax"></div>
 
-## 0. Как добыть R и Rstudio
+## 0. Установите `rmarkdown`
 
-Бесплатное программное обеспечение:
-
-* [R](https://cran.r-project.org/)
-* [RStudio](https://www.rstudio.com/products/rstudio/download/#download)
-* Если не хочется ставить сторонние программы:
-    * [RStudio Cloud](https://rstudio.cloud/)
-    * [rollApp](https://www.rollapp.com/app/rstudio)
+```{r, eval= FALSE}
+install.packages("rmarkdown")
+```
 
 <div class="parallax"></div>
+
+## 1. Первый маркдаун {.tabset .tabset-fade .tabset-pills}
+Создайте файл .Rmd в какой-нибудь папке. Скомпелировать файл можно командой:
+```{r, eval=FALSE}
+rmarkdown::render("ваш_файл.Rmd")
+```
+
+### code
+
+```{bash, echo = FALSE}
+cat ./data/1_ex.Rmd
+```
+
+### result
+
+<iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/1_ex.html" width = 700 height = 500>
+  <p>Your browser does not support iframes.</p>
+</iframe>
 
