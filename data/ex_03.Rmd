@@ -12,7 +12,7 @@ ls
 rm -d my_new_folder
 ```
 
-```{python3}
-x = "моя строка"
+```{python}
+x = "my string"
 print(x.split(" "))
 ```
