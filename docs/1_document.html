@@ -205,7 +205,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2,h3,h4",
+      selectors: "h1,h2,h3",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
@@ -713,11 +713,13 @@ Your browser does not support iframes.
 <div id="pets-or-livestock" class="section level3">
 <h3>4.4 Pets or livestock?</h3>
 <p>В RMarkdown каждому фрагменту кода можно дать имя (но избегайте пробелов и точек):</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
-diamonds %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">count</span>(carat, color) %&gt;%
-<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(carat, n, <span class="dt">color =</span> color))+
-<span class="st">  </span><span class="kw">geom_point</span>()</code></pre></div>
+<pre><code>```{r my_beautiful_graph, eval = FALSE}
+library(tidyverse)
+diamonds %&gt;% 
+  count(carat, color) %&gt;%
+  ggplot(aes(carat, n, color = color))+
+  geom_point()
+```</code></pre>
 <p>Maëlle Salmon написал <a href="http://www.masalmon.eu/2017/08/08/chunkpets/">отличный пост</a>, почему полезно именовать фрагменты кода:</p>
 <ul>
 <li>проще ориентироваться</li>
@@ -733,15 +735,27 @@ diamonds %&gt;%<span class="st"> </span>
 <div id="yaml-" class="section level2">
 <h2>5 YAML шапка</h2>
 <p>Факультативная YAML шапка обычно содержит метаданные документа, и аргументы, необходимые для работы некоторых дополнений.</p>
-<pre><code>title: &quot;Мой RMarkdown&quot;
+<pre><code>---
+title: &quot;Мой RMarkdown&quot;
 author: Айс Дан
-date: 5 января 2018</code></pre>
+date: 5 января 2018
+---</code></pre>
 <div id="--" class="section level3">
 <h3>5.1 Тип получившегося файла</h3>
+<ul>
+<li><code>output: html_document</code> (по умолчанию)</li>
+<li><code>output: word_document</code></li>
+<li><code>output: pdf_document</code> (но нужно договориться с <span class="math inline">\(\LaTeX\)</span>ом на вашем компьютере)</li>
+<li><code>output: ioslides_presentation</code></li>
+<li><code>output: slidy_presentation</code></li>
+<li><code>output: slidy_presentation</code></li>
+<li><code>output: beamer_presentation</code></li>
+</ul>
+<p>и др.</p>
 </div>
 <div class="section level3">
 <h3>5.2 Библиография</h3>
-<p>Существует <a href="http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html#citations">несколько сопособов</a> вставлять библиографию в RMarkdown. Я раскажу, как использовать пакет <code>Bibtex</code> (как видно из названия, сделанный для <span class="math inline">\(\LaTeX\)</span>). Для начала нужно создать файл с раширением .bib, в который записать все источники, которые будут использоваться (библиографию в формате BibTeX выдает, например, <a href="https://scholar.google.ru">GoogleScholar</a>):</p>
+<p>Существует <a href="http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html#citations">несколько сопособов</a> вставлять библиографию в RMarkdown. Я раскажу, как использовать пакет <code>Bibtex</code> (как видно из названия, сделанный для <span class="math inline">\(\LaTeX\)</span>). Для начала нужно создать файл с раширением .bib, в который записать все источники, которые будут использоваться (библиографию в формате <code>BibTeX</code> выдает, например, <a href="https://scholar.google.ru">GoogleScholar</a>):</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cat</span> ./bibliography.bib</code></pre></div>
 <pre><code>@book{ladefoged96,
   title={The sounds of the world&#39;s languages},
@@ -775,11 +789,44 @@ bibliography: bibliography.bib
 <p>Об этом можно узнать из <span class="citation">(см. Gordon, Barthmaier, and Sands 2002, с. 33–35; а также Ladefoged and Maddieson 1996, гл. 1)</span>…</p>
 <p>Список литературы автоматически появляется в конце.</p>
 </div>
-<div class="section level3">
-<h3>5.3 Оглавление</h3>
+<div id="--." class="section level3">
+<h3>5.3 Оглавление и пр.</h3>
+<p>Существует сразу несколько аргументов, отвечающих за оглавление.</p>
+<ul>
+<li><code>toc</code> вставлять ли оглавление</li>
+<li><code>toc_depth</code> глубина иерархии, которую отражать в огловлении</li>
+<li><code>toc_float</code> должно ли оглавление все время следовать за текстом</li>
+<li><code>collapsed</code> должно ли оглавление быть все время полностью раскрыто</li>
+<li><code>collapsed</code> должно ли оглавление быть все время полностью раскрыто</li>
+<li><code>number_sections</code> автоматическая нумерация секций</li>
+<li><code>code_folding</code> (hide) — делать ли кнопочку, показывающую/скрывающую весь код</li>
+<li><code>theme</code> одна из <a href="https://bootswatch.com/">Bootstrap тем</a></li>
+<li><code>highlight</code>: “default”, “tango”, “pygments”, “kate”, “monochrome”, “espresso”, “zenburn”, “haddock” или “textmate”</li>
+</ul>
+<pre><code>---
+html_document:
+    theme: spacelab
+    highlight: pygments
+    toc: yes
+    toc_position: right
+    toc_depth: 3
+    toc_float: yes
+    smooth_scroll: false
+---</code></pre>
 </div>
 <div id="-" class="section level3">
 <h3>5.4 Отображение датафреймов</h3>
+<ul>
+<li><code>df_print: default</code></li>
+<li><code>df_print: kable</code></li>
+<li><code>df_print: tibble</code></li>
+<li><code>df_print: paged</code></li>
+</ul>
+<pre><code>---
+output:
+  html_document:
+    df_print: paged
+---</code></pre>
 </div>
 <div id="css" class="section level3">
 <h3>5.5 CSS</h3>

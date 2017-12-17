@@ -305,12 +305,8 @@ cat ./data/ex_05.Rmd
 
 ### 4.4 Pets or livestock?
 В RMarkdown каждому фрагменту кода можно дать имя (но избегайте пробелов и точек):
-```{r my_beautiful_graph, eval = FALSE}
-library(tidyverse)
-diamonds %>% 
-  count(carat, color) %>%
-  ggplot(aes(carat, n, color = color))+
-  geom_point()
+```{bash, echo = FALSE}
+cat ./data/ex_06.Rmd
 ```
 
 Maëlle Salmon написал [отличный пост](http://www.masalmon.eu/2017/08/08/chunkpets/), почему полезно именовать фрагменты кода:
@@ -326,14 +322,27 @@ Maëlle Salmon написал [отличный пост](http://www.masalmon.eu
 Факультативная YAML шапка обычно содержит метаданные документа, и аргументы, необходимые для работы некоторых дополнений.
 
 ```
+---
 title: "Мой RMarkdown"
 author: Айс Дан
 date: 5 января 2018
+---
 ```
 
 ### 5.1 Тип получившегося файла
+
+* `output: html_document` (по умолчанию)
+* `output: word_document`
+* `output: pdf_document` (но нужно договориться с $\LaTeX$ом на вашем компьютере)
+* `output: ioslides_presentation`
+* `output: slidy_presentation`
+* `output: slidy_presentation`
+* `output: beamer_presentation`
+
+и др.
+
 ### 5.2 Библиография
-Существует [несколько сопособов](http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html#citations) вставлять библиографию в RMarkdown. Я раскажу, как использовать пакет `Bibtex` (как видно из названия, сделанный для $\LaTeX$). Для начала нужно создать файл с раширением .bib, в который записать все источники, которые будут использоваться (библиографию в формате BibTeX выдает, например,  [GoogleScholar](https://scholar.google.ru)):
+Существует [несколько сопособов](http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html#citations) вставлять библиографию в RMarkdown. Я раскажу, как использовать пакет `Bibtex` (как видно из названия, сделанный для $\LaTeX$). Для начала нужно создать файл с раширением .bib, в который записать все источники, которые будут использоваться (библиографию в формате `BibTeX` выдает, например,  [GoogleScholar](https://scholar.google.ru)):
 ```{bash}
 cat ./bibliography.bib
 ```
@@ -365,10 +374,46 @@ bibliography: bibliography.bib
 
 Список литературы автоматически появляется в конце.
 
-### 5.3 Оглавление
+### 5.3 Оглавление и пр.
+Существует сразу несколько аргументов, отвечающих за оглавление.
+
+* `toc` вставлять ли оглавление
+* `toc_depth`  глубина иерархии, которую отражать в огловлении
+* `toc_float`  должно ли оглавление все время следовать за текстом
+* `collapsed`  должно ли оглавление быть все время полностью раскрыто
+* `collapsed`  должно ли оглавление быть все время полностью раскрыто
+* `number_sections` автоматическая нумерация секций
+* `code_folding` (hide) --- делать ли кнопочку, показывающую/скрывающую весь код
+* `theme` одна из [Bootstrap тем](https://bootswatch.com/)
+* `highlight`: "default", "tango", "pygments", "kate", "monochrome", "espresso", "zenburn", "haddock" или "textmate"
+
+```
+---
+html_document:
+    theme: spacelab
+    highlight: pygments
+    toc: yes
+    toc_position: right
+    toc_depth: 3
+    toc_float: yes
+    smooth_scroll: false
+---
+```
 
 ### 5.4 Отображение датафреймов
 
+* `df_print: default`
+* `df_print: kable`
+* `df_print: tibble`
+* `df_print: paged`
+
+```
+---
+output:
+  html_document:
+    df_print: paged
+---
+```
 ### 5.5 CSS
 ```
 ---
