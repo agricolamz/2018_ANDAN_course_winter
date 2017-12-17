@@ -1,7 +1,3 @@
----
-output: html_document
----
-
 И код, и результат
 ```{r}
 plot(mtcars$mpg)

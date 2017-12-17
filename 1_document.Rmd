@@ -1,6 +1,7 @@
 ---
 title: "1. RMarkdown документ"
 author: "Г. Мороз <br> Презентация доступна по ссылке: goo.gl/371MkL"
+bibliography: bibliography.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -23,7 +24,7 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE, comment=NA)
 }
 </style>
 
-> Еще не прошло и двух лет, как  [Илья Щуров](https://github.com/ischurov) сказал мне про RMarkdown. С тех пор и не счесть, сколько всего я этим пакетом сделал. Лучше повода поблагодарить Илью, наверное, и не найти.
+> Еще не прошло и двух лет, как  [Илья Щуров](https://github.com/ischurov) сказал мне про RMarkdown. С тех пор и не счесть, сколько всего я этим пакетом сделал. Лучше места и повода поблагодарить Илью, наверное, и не найти.
 
 <div class="parallax"></div>
 
@@ -38,7 +39,7 @@ install.packages("rmarkdown")
 ## 1 Первый R markdown
 ### 1.2 Составляющие R markdown
 
-* [yaml](https://en.wikipedia.org/wiki/YAML) шапка
+* [yaml](https://en.wikipedia.org/wiki/YAML) шапка (факультативна)
 * обычный текст с [markdown](https://en.wikipedia.org/wiki/Markdown) форматированием (расширенный при помощи [Pandoc](https://en.wikipedia.org/wiki/Pandoc))
 * фрагменты кода (не обязательно на языке R)
 
@@ -322,5 +323,61 @@ Maëlle Salmon написал [отличный пост](http://www.masalmon.eu
 <div class="parallax"></div>
 
 ## 5 YAML шапка
+Факультативная YAML шапка обычно содержит метаданные документа, и аргументы, необходимые для работы некоторых дополнений.
+
+```
+title: "Мой RMarkdown"
+author: Айс Дан
+date: 5 января 2018
+```
+
+### 5.1 Тип получившегося файла
+### 5.2 Библиография
+Существует [несколько сопособов](http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html#citations) вставлять библиографию в RMarkdown. Я раскажу, как использовать пакет `Bibtex` (как видно из названия, сделанный для $\LaTeX$). Для начала нужно создать файл с раширением .bib, в который записать все источники, которые будут использоваться (библиографию в формате BibTeX выдает, например,  [GoogleScholar](https://scholar.google.ru)):
+```{bash}
+cat ./bibliography.bib
+```
+
+На следующем шаге нужно добавить название файла с раширением .bib в YAML шапку:
+
+```
+---
+bibliography: bibliography.bib
+---
+```
+После этого, можно использовать сслыки в тексте 
+```
+В своей работе @gordon02 раскрыл...
+```
+В своей работе @gordon02 раскрыл...
+```
+Об этом можно узнать из [@ladefoged96; @gordon02], но ...
+```
+Об этом можно узнать из [@ladefoged96; @gordon02], но ...
+```
+В своей работе [@gordon02] раскрыл...
+```
+В своей работе [@gordon02] раскрыл...
+```
+Об этом можно узнать из [см. @gordon02, с. 33--35; а также @ladefoged96, гл. 1]...
+```
+Об этом можно узнать из [см. @gordon02, с. 33--35; а также @ladefoged96, гл. 1]...
+
+Список литературы автоматически появляется в конце.
+
+### 5.3 Оглавление
+
+### 5.4 Отображение датафреймов
+
+### 5.5 CSS
+```
+---
+output:
+  html_document:
+    css: styles.css
+---
+```
+
+Если хочется совсем все взять из .css файла, то нужно добавить в YAML шапку аргументы `theme: null` и `highlight: null`.
 
 <div class="parallax"></div>

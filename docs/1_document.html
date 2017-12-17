@@ -352,7 +352,7 @@ div.tocify {
 }
 </style>
 <blockquote>
-<p>Еще не прошло и двух лет, как <a href="https://github.com/ischurov">Илья Щуров</a> сказал мне про RMarkdown. С тех пор и не счесть, сколько всего я этим пакетом сделал. Лучше повода поблагодарить Илью, наверное, и не найти.</p>
+<p>Еще не прошло и двух лет, как <a href="https://github.com/ischurov">Илья Щуров</a> сказал мне про RMarkdown. С тех пор и не счесть, сколько всего я этим пакетом сделал. Лучше места и повода поблагодарить Илью, наверное, и не найти.</p>
 </blockquote>
 <div class="parallax">
 
@@ -369,7 +369,7 @@ div.tocify {
 <div id="-r-markdown" class="section level3">
 <h3>1.2 Составляющие R markdown</h3>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/YAML">yaml</a> шапка</li>
+<li><a href="https://en.wikipedia.org/wiki/YAML">yaml</a> шапка (факультативна)</li>
 <li>обычный текст с <a href="https://en.wikipedia.org/wiki/Markdown">markdown</a> форматированием (расширенный при помощи <a href="https://en.wikipedia.org/wiki/Pandoc">Pandoc</a>)</li>
 <li>фрагменты кода (не обязательно на языке R)</li>
 </ul>
@@ -381,7 +381,6 @@ div.tocify {
 <div id="code" class="section level4">
 <h4>code</h4>
 <pre><code>---
-title: &quot;Наш первый R Markdown файл&quot;
 output: html_document
 ---
 
@@ -602,11 +601,7 @@ $$\frac{\pi}{\sum{n+1}}$$</code></pre>
 <h3>4.1 Язык программирования</h3>
 <div id="code-1" class="section level4">
 <h4>code</h4>
-<pre><code>---
-output: html_document
----
-
-```{r}
+<pre><code>```{r}
 summary(cars)
 ```
 
@@ -634,11 +629,7 @@ Your browser does not support iframes.
 <h3>4.2 Появление и исполнение кода</h3>
 <div id="code-2" class="section level4">
 <h4>code</h4>
-<pre><code>---
-output: html_document
----
-
-И код, и результат
+<pre><code>И код, и результат
 ```{r}
 plot(mtcars$mpg)
 ```
@@ -687,11 +678,7 @@ Your browser does not support iframes.
 <p>Все эти аргументы можно перечислить в функции <code>knitr::opts_chunk$set(...)</code>:</p>
 <div id="code-3" class="section level4">
 <h4>code</h4>
-<pre><code>---
-output: html_document
----
-
-```{r, include=FALSE}
+<pre><code>```{r, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, fig.height = 3)
 ```
 
@@ -745,8 +732,74 @@ diamonds %&gt;%<span class="st"> </span>
 </div>
 <div id="yaml-" class="section level2">
 <h2>5 YAML шапка</h2>
+<p>Факультативная YAML шапка обычно содержит метаданные документа, и аргументы, необходимые для работы некоторых дополнений.</p>
+<pre><code>title: &quot;Мой RMarkdown&quot;
+author: Айс Дан
+date: 5 января 2018</code></pre>
+<div id="--" class="section level3">
+<h3>5.1 Тип получившегося файла</h3>
+</div>
+<div class="section level3">
+<h3>5.2 Библиография</h3>
+<p>Существует <a href="http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html#citations">несколько сопособов</a> вставлять библиографию в RMarkdown. Я раскажу, как использовать пакет <code>Bibtex</code> (как видно из названия, сделанный для <span class="math inline">\(\LaTeX\)</span>). Для начала нужно создать файл с раширением .bib, в который записать все источники, которые будут использоваться (библиографию в формате BibTeX выдает, например, <a href="https://scholar.google.ru">GoogleScholar</a>):</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cat</span> ./bibliography.bib</code></pre></div>
+<pre><code>@book{ladefoged96,
+  title={The sounds of the world&#39;s languages},
+  author={Ladefoged, P. and Maddieson, I.},
+  year={1996},
+  publisher={Oxford Publishers}
+}
+
+@article{gordon02,
+  title={A cross-linguistic acoustic study of voiceless fricatives},
+  author={Gordon, M. and Barthmaier, P. and Sands, K.},
+  journal={Journal of the International Phonetic Association},
+  volume={32},
+  number={2},
+  pages={141--174},
+  year={2002},
+  publisher={Cambridge University Press}
+}</code></pre>
+<p>На следующем шаге нужно добавить название файла с раширением .bib в YAML шапку:</p>
+<pre><code>---
+bibliography: bibliography.bib
+---</code></pre>
+<p>После этого, можно использовать сслыки в тексте</p>
+<pre><code>В своей работе @gordon02 раскрыл...</code></pre>
+<p>В своей работе <span class="citation">Gordon, Barthmaier, and Sands (2002)</span> раскрыл…</p>
+<pre><code>Об этом можно узнать из [@ladefoged96; @gordon02], но ...</code></pre>
+<p>Об этом можно узнать из <span class="citation">(Ladefoged and Maddieson 1996; Gordon, Barthmaier, and Sands 2002)</span>, но …</p>
+<pre><code>В своей работе [@gordon02] раскрыл...</code></pre>
+<p>В своей работе <span class="citation">(Gordon, Barthmaier, and Sands 2002)</span> раскрыл…</p>
+<pre><code>Об этом можно узнать из [см. @gordon02, с. 33--35; а также @ladefoged96, гл. 1]...</code></pre>
+<p>Об этом можно узнать из <span class="citation">(см. Gordon, Barthmaier, and Sands 2002, с. 33–35; а также Ladefoged and Maddieson 1996, гл. 1)</span>…</p>
+<p>Список литературы автоматически появляется в конце.</p>
+</div>
+<div class="section level3">
+<h3>5.3 Оглавление</h3>
+</div>
+<div id="-" class="section level3">
+<h3>5.4 Отображение датафреймов</h3>
+</div>
+<div id="css" class="section level3">
+<h3>5.5 CSS</h3>
+<pre><code>---
+output:
+  html_document:
+    css: styles.css
+---</code></pre>
+<p>Если хочется совсем все взять из .css файла, то нужно добавить в YAML шапку аргументы <code>theme: null</code> и <code>highlight: null</code>.</p>
 <div class="parallax">
 
+</div>
+<div id="refs" class="references">
+<div id="ref-gordon02">
+<p>Gordon, M., P. Barthmaier, and K. Sands. 2002. “A Cross-Linguistic Acoustic Study of Voiceless Fricatives.” <em>Journal of the International Phonetic Association</em> 32 (2). Cambridge University Press: 141–74.</p>
+</div>
+<div id="ref-ladefoged96">
+<p>Ladefoged, P., and I. Maddieson. 1996. <em>The Sounds of the World’s Languages</em>. Oxford Publishers.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="footnotes">

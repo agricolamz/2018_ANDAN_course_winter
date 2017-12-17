@@ -1,5 +1,4 @@
 ---
-title: "Наш первый R Markdown файл"
 output: html_document
 ---
 
