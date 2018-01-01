@@ -10,7 +10,7 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE)
 <style>
 .parallax {
     /* The image used */
-    background-image: url("1_logo.jpg");
+    background-image: url("rmarkdown.png");
 
     /* Set a specific height */
     min-height: 350px; 
@@ -25,15 +25,16 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE)
 
 <div class="parallax"></div>
 
-## 0. Как добыть R и Rstudio
+## 1. ioslides
+<div class="parallax"></div>
 
-Бесплатное программное обеспечение:
+## 2. slidy
+<div class="parallax"></div>
 
-* [R](https://cran.r-project.org/)
-* [RStudio](https://www.rstudio.com/products/rstudio/download/#download)
-* Если не хочется ставить сторонние программы:
-    * [RStudio Cloud](https://rstudio.cloud/)
-    * [rollApp](https://www.rollapp.com/app/rstudio)
+## 3. slidyfy
+<div class="parallax"></div>
+
+## 4. xaringan
 
 <div class="parallax"></div>
 
