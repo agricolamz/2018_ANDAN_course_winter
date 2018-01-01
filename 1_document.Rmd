@@ -156,9 +156,10 @@ __жирный__ или **другой жирный**
 cat ./data/ex_02.Rmd
 ```
 
-```{javascript}
-var s = "подсветка синтаксиса JavaScript";
-alert(s);
+```{python}
+friends = ['john', 'pat', 'gary', 'michael']
+for i, name in enumerate(friends):
+    print "iteration {iteration} is {name}".format(iteration=i, name=name)
 ```
 
 Фигурные скобки не обязательны, но тогда RStudio подсветит.
@@ -207,7 +208,7 @@ alert(s);
 
 <div class="parallax"></div>
 
-## 3 `Pandoc` {.tabset .tabset-fade .tabset-pills}
+## 3 `Pandoc`
 [`Pandoc`](https://pandoc.org/) это программа, созданная [Дж. МакФарлэйном (J. MacFarlane)](johnmacfarlane.net), которая позволяет переходить из разных текстовых форматов в другие, а также смешивать их. Я покожу лишь несколько полезных расширений.
 
 ### 3.1 Верхние и нижние индексы
@@ -287,7 +288,6 @@ cat ./data/ex_04.Rmd
 * `warning`: показывать ли предупреждения.
 * `message`: показывать ли сообщения (например, при подключении пакетов).
 * `comment`: по умолчанию, результат работы кода предваряется знаком `##`, используйте `NA`, чтобы их не было, или любую другую строку.
-* `background`:  цвет фона (по умолчанию, '#F7F7F7').
 * `cache`: сохранить ли результат работы фрагмента кода. Очень полезно, если происходят какие-то операции, занимающая много времени. Сохранив результат, не нужно будет тратить время, на пересчет, при каждой новой компиляции.
 * `fig.width`, `fig.height` (по умолчанию, 7)
 
@@ -315,6 +315,7 @@ Maëlle Salmon написал [отличный пост](http://www.masalmon.eu
 * код более читаемый
 * ошибки при компеляции показывают имя, а не номер
 * если фрагмент кэшировался, то добавление одного фрагменты перед ним, не заставит все пересчитываться
+* в `blogdown` можно ссылаться
 
 <div class="parallax"></div>
 
@@ -424,5 +425,59 @@ output:
 ```
 
 Если хочется совсем все взять из .css файла, то нужно добавить в YAML шапку аргументы `theme: null` и `highlight: null`.
+
+<div class="parallax"></div>
+
+## 6 JavaScript библиотеки
+
+Существует много разных пакетов, которые интегрируют возможности уже написанных java-script библиотек в R. Все это возможно благодоря пакету `htmlwidgets`, который соединяет R и JavaScript
+
+### 6.1 `DT`
+
+```{r}
+library(DT)
+datatable(mtcars)
+```
+
+У меня была вот такая [проблема](https://stackoverflow.com/questions/46967188/random-seed-set-incorrectly-when-knitr-and-dtdatatable-are-used). Устанавливайте версию с гитхаба:
+
+```{r, eval=FALSE}
+devtools::install_github("rstudio/DT")
+```
+
+
+### 6.2 `leaflet`
+
+```{r}
+library(leaflet)
+leaflet() %>%
+  addTiles() %>% 
+  addPopups(-93.65, 42.0285,
+            'Мы возможно <b>здесь</b>')
+```
+
+### 6.3 `plotly`
+
+```{r}
+library(ggplot2)
+library(plotly)
+
+mtcars %>% 
+  ggplot(aes(mpg, hp)) + 
+  geom_point()+
+  geom_smooth(method = "lm")+
+  theme_bw()->
+  my_plot
+ggplotly(my_plot)
+```
+
+### 6.4 `visNetwork`
+```{r}
+library(visNetwork)
+nodes <- data.frame(id = 1:3)
+edges <- data.frame(from = c(1,2), to = c(1,3))
+
+visNetwork(nodes, edges)
+```
 
 <div class="parallax"></div>
