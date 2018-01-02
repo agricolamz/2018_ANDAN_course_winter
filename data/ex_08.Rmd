@@ -68,7 +68,7 @@ datatable(mtcars)
 library(leaflet)
 leaflet() %>% 
   addTiles() %>%
-  addPopups(-93.65, 42.0285, 'Мы возможно <b>здесь</b>')
+  addPopups(37.168254, 55.408408, 'Мы возможно <b>здесь</b>')
 ```
 
 ## Список литературы

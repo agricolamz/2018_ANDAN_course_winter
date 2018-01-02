@@ -452,7 +452,7 @@ devtools::install_github("rstudio/DT")
 library(leaflet)
 leaflet() %>%
   addTiles() %>% 
-  addPopups(-93.65, 42.0285,
+  addPopups(37.168254, 55.408408,
             'Мы возможно <b>здесь</b>')
 ```
 

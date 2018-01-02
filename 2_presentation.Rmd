@@ -10,7 +10,7 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE, comment=NA)
 <style>
 .parallax {
     /* The image used */
-    background-image: url("rmarkdown.png");
+    background-image: url("presentation.jpg");
 
     /* Set a specific height */
     min-height: 350px; 
@@ -78,7 +78,7 @@ cat ./data/ex_09.Rmd
 </div>
 
 ### 1.5 Еще оформление:
-В yaml-шапке:
+В yaml-шапке (тогда относится ко всем слайдам):
 ```
 output:
   ioslides_presentation:
@@ -87,16 +87,17 @@ output:
     transition: faster
     logo: logo.png
 ```
-или после заголовка:
+или после заголовка (тогда относится только к одному слайду):
 ```
 ##  Мой заголовок {.build .smaller}
 ```
-Центрировать содержимое слайда можно следующими командами:
+Центрировать содержимое слайда можно следующими аргументами:
 ```
 ##  Мой заголовок {.flexbox .vcenter}
 ```
+
 ### 1.6 Заметки {.tabset .tabset-fade .tabset-pills}
-Если добавить к адресу презентации `?presentme=true`, то получится [новое окно](https://agricolamz.github.io/2018_ANDAN_course_winter/ex_10.html?presentme=true), где будут отображаться заметки!
+Если добавить к адресу презентации `?presentme=true`, то получится [новое окно](https://agricolamz.github.io/2018_ANDAN_course_winter/ex_10.html?presentme=true), где будут отображаться заметки! Режим presenter view будет все время открываться, пока его не отключат командой `?presentme=false`.
 
 #### code
 ```{bash, echo = FALSE}
@@ -108,19 +109,53 @@ cat ./data/ex_10.Rmd
 </iframe>
 </div>
 
-<div class="parallax"></div>
-
 ## 2. slidy
+
 <div class="parallax"></div>
 
-## 3. slidyfy
-<div class="parallax"></div>
+## 3. Другие системы
+
+### 3.1 xaringan {.tabset .tabset-fade .tabset-pills}
+Смотрите [репозиторий](https://github.com/yihui/xaringan). Addin `moon_reader` позволяет видеть, что получается, сразу после сохранения .Rmd файла.
+
+```{r}
+devtools::install_github('yihui/xaringan')
+```
+
+#### result
+<div id="wrap">
+<iframe id="frame" src="https://slides.yihui.name/xaringan/">
+</iframe>
+</div>
+
+#### code
+[code](https://raw.githubusercontent.com/yihui/xaringan/master/inst/rmarkdown/templates/xaringan/skeleton/skeleton.Rmd)
+
+### 3.2 slidify {.tabset .tabset-fade .tabset-pills}
+Смотрите [сайт](http://slidify.org/):
 ```{r, eval = FALSE}
 devtools::install_github('ramnathv/slidify')
 ```
 
 Как пишет туториал, под Windows еще нужны `gcc` и `RTools`.
 
-## 4. xaringan
-
-<div class="parallax"></div>
+#### example 1
+<div id="wrap">
+<iframe id="frame" src="http://slidify.org/samples/intro/">
+</iframe>
+</div>
+#### example 2
+<div id="wrap">
+<iframe id="frame" src="http://slidify.org/samples/deck.js/">
+</iframe>
+</div>
+#### example 3
+<div id="wrap">
+<iframe id="frame" src="http://slidify.org/samples/landslide/">
+</iframe>
+</div>
+#### example 4
+<div id="wrap">
+<iframe id="frame" src="http://slidify.org/samples/shower/">
+</iframe>
+</div>
