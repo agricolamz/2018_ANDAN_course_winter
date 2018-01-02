@@ -58,7 +58,7 @@ cat ./data/ex_01.Rmd
 
 #### result
 <iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_01.html" width = 700 height = 450>
-  <p>Your browser does not support iframes.</p>
+  <p>Your browser does not support iframes :(</p>
 </iframe>
 
 <div class="parallax"></div>
@@ -265,7 +265,7 @@ cat ./data/ex_03.Rmd
 
 #### result
 <iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_03.html" width = 700 height = 450>
-  <p>Your browser does not support iframes.</p>
+  <p>Your browser does not support iframes :(</p>
 </iframe>
 
 
@@ -277,7 +277,7 @@ cat ./data/ex_04.Rmd
 
 #### result
 <iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_04.html" width = 700 height = 450>
-  <p>Your browser does not support iframes.</p>
+  <p>Your browser does not support iframes :(</p>
 </iframe>
 
 ### 4.3 Другие полезные аргументы {.tabset .tabset-fade .tabset-pills}
@@ -300,7 +300,7 @@ cat ./data/ex_05.Rmd
 
 #### result
 <iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_05.html" width = 700 height = 450>
-  <p>Your browser does not support iframes.</p>
+  <p>Your browser does not support iframes :(</p>
 </iframe>
 
 ### 4.4 Pets or livestock?
@@ -344,7 +344,7 @@ date: 5 января 2018
 
 ### 5.2 Библиография
 Существует [несколько сопособов](http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html#citations) вставлять библиографию в RMarkdown. Я раскажу, как использовать пакет `Bibtex` (как видно из названия, сделанный для $\LaTeX$). Для начала нужно создать файл с раширением .bib, в который записать все источники, которые будут использоваться (библиографию в формате `BibTeX` выдает, например,  [GoogleScholar](https://scholar.google.ru)):
-```{bash}
+```{bash, echo = FALSE}
 cat ./bibliography.bib
 ```
 
