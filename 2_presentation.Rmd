@@ -95,8 +95,9 @@ output:
 ```
 ##  Мой заголовок {.flexbox .vcenter}
 ```
-### 1.6 Время, заметки {.tabset .tabset-fade .tabset-pills}
-Если добавить к адресу `?presentme=true`
+### 1.6 Заметки {.tabset .tabset-fade .tabset-pills}
+Если добавить к адресу презентации `?presentme=true`, то получится [новое окно](https://agricolamz.github.io/2018_ANDAN_course_winter/ex_10.html?presentme=true), где будут отображаться заметки!
+
 #### code
 ```{bash, echo = FALSE}
 cat ./data/ex_10.Rmd
@@ -104,11 +105,6 @@ cat ./data/ex_10.Rmd
 #### result
 <div id="wrap">
 <iframe id="frame" src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_10.html">
-</iframe>
-</div>
-#### `?presentme=true`
-<div id="wrap">
-<iframe id="frame" src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_10.html?presentme=true">
 </iframe>
 </div>
 
