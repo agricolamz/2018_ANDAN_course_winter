@@ -350,97 +350,108 @@ div.tocify {
     background-repeat: no-repeat;
     background-size: auto;
 }
+    #wrap { width: 700px; height: 550px; padding: 0; overflow: hidden; }
+    #frame { width: 900px; height: 700px; border: 1px solid black; }
+    #frame {  zoom: 0.75;
+              -moz-transform: scale(0.7); 
+              -moz-transform-origin: 0 0; }
 </style>
 <div class="parallax">
 
 </div>
 <div id="ioslides" class="section level2">
 <h2>1. ioslides</h2>
+<p>В осносном, все выглядит как обычный RMarkdown, однако hash-заголовки имеют другое значение.</p>
+<ul>
+<li>Заголовок презентации обязательно писать в yaml-шапке</li>
+<li>Новый слайд разделяется при помощи <code>##</code></li>
+<li>При помощи <code>#</code> делается монолитный слайд другого цвета с надписью посередине</li>
+</ul>
 <div id="rmarkdown-" class="section level3 tabset tabset-fade tabset-pills">
 <h3>1.1 RMarkdown возможности</h3>
 <div id="code" class="section level4">
 <h4>code</h4>
-<pre><code>## ---
-## title: &quot;Презентация ioslides&quot;
-## output: ioslides_presentation
-## bibliography: bibliography.bib
-## ---
-## 
-## ## Markdown: базовое
-## 
-## ### Подраздел на слайде...
-## Давайте попробуем разное форматирование: _италик_, __жирный__, ~~зачеркивание~~
-## 
-## * список
-## * список
-##     * список
-## 
-## ### Ссылки
-## 
-## [Ссылка 1](https://agricolamz.github.io/2018_ANDAN_course_winter/), &lt;https://agricolamz.github.io/2018_ANDAN_course_winter/&gt;
-## 
-## &gt; Цитата...
-## 
-## ## Markdown: код
-## 
-## Бывает такой датасет `cars`:
-## 
-## ```{r cars, echo = TRUE}
-## summary(cars)
-## ```
-## 
-## ## Markdown: график
-## 
-## ```{r pressure}
-## plot(pressure)
-## ```
-## 
-## ## html код
-## 
-## &lt;iframe width=&quot;300&quot; height=&quot;250&quot;
-## src=&quot;https://www.youtube.com/watch?v=-_1MvSWL1e4&quot;&gt;
-## &lt;/iframe&gt; 
-## 
-## ## Pandoc
-## 
-## 2^10^ C~k~ $\frac{\pi}{\sum{n+1}}$
-## 
-## Вот и сноска[^1]
-## 
-## [^1]: Сноска, сноска, сноска
-## 
-## (@) Славный пример номер раз.
-## (@two) Славный пример номер два, у которого есть *имя*.
-## 
-## Я могу сослаться на пример (@two)!
-## 
-## Ссылка на библиографию @gordon02...
-## 
-## ## Javascript: DT
-## 
-## ```{r}
-## library(DT)
-## datatable(mtcars)
-## ```
-## 
-## ## Javascript: leaflet
-## 
-## ```{r, echo=FALSE}
-## library(leaflet)
-## leaflet() %&gt;% 
-##   addTiles() %&gt;%
-##   addPopups(-93.65, 42.0285, &#39;Мы возможно &lt;b&gt;здесь&lt;/b&gt;&#39;)
-## ```
-## 
-## ## Список литературы</code></pre>
+<pre><code>---
+title: &quot;Презентация ioslides&quot;
+output: ioslides_presentation
+bibliography: bibliography.bib
+---
+# Markdown: базовое
+## Markdown: базовое
+### Подраздел на слайде...
+Давайте попробуем разное форматирование: _италик_, __жирный__, ~~зачеркивание~~
+
+* список
+* список
+    * список
+
+### Ссылки
+
+[Ссылка 1](https://agricolamz.github.io/2018_ANDAN_course_winter/), &lt;https://agricolamz.github.io/2018_ANDAN_course_winter/&gt;
+
+&gt; Цитата...
+
+## Markdown: код
+
+Бывает такой датасет `cars`:
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Markdown: график
+
+```{r pressure}
+plot(pressure)
+```
+
+## html код
+
+&lt;iframe width=&quot;300&quot; height=&quot;250&quot;
+src=&quot;https://www.youtube.com/watch?v=-_1MvSWL1e4&quot;&gt;
+&lt;/iframe&gt; 
+
+# Pandoc
+## Pandoc
+
+2^10^ C~k~ $\frac{\pi}{\sum{n+1}}$
+
+Вот и сноска[^1]
+
+[^1]: Сноска, сноска, сноска
+
+(@) Славный пример номер раз.
+(@two) Славный пример номер два, у которого есть *имя*.
+
+Я могу сослаться на пример (@two)!
+
+Ссылка на библиографию @gordon02...
+
+# Javascript
+## Javascript: DT
+
+```{r}
+library(DT)
+datatable(mtcars)
+```
+
+## Javascript: leaflet
+
+```{r, echo=FALSE}
+library(leaflet)
+leaflet() %&gt;% 
+  addTiles() %&gt;%
+  addPopups(-93.65, 42.0285, &#39;Мы возможно &lt;b&gt;здесь&lt;/b&gt;&#39;)
+```
+
+## Список литературы</code></pre>
 </div>
 <div id="result" class="section level4">
 <h4>result</h4>
-<iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_08.html" width="700" height="450">
-<p>
-Your browser does not support iframes :(
-</p>
+<div id="wrap">
+<iframe id="frame" src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_08.html">
 </iframe>
+</div>
 </div>
 </div>
 <div id="rmarkdown--" class="section level3">

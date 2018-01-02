@@ -4,7 +4,7 @@ author: "Г. Мороз <br> Презентация доступна по ссы
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, comment=NA)
 ```
 
 <style>
@@ -21,20 +21,32 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE)
     background-repeat: no-repeat;
     background-size: auto;
 }
+    #wrap { width: 700px; height: 550px; padding: 0; overflow: hidden; }
+    #frame { width: 900px; height: 700px; border: 1px solid black; }
+    #frame {  zoom: 0.75;
+              -moz-transform: scale(0.7); 
+              -moz-transform-origin: 0 0; }
 </style>
 
 <div class="parallax"></div>
 
 ## 1. ioslides
+В осносном, все выглядит как обычный RMarkdown, однако hash-заголовки имеют другое значение.
+
+* Заголовок презентации обязательно писать в yaml-шапке 
+* Новый слайд разделяется при помощи `##`
+* При помощи `#` делается монолитный слайд другого цвета с надписью посередине
+
 ### 1.1 RMarkdown возможности {.tabset .tabset-fade .tabset-pills}
 #### code
 ```{bash, echo = FALSE}
 cat ./data/ex_08.Rmd
 ```
 #### result
-<iframe src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_08.html" width = 700 height = 450>
-  <p>Your browser does not support iframes :( </p>
+<div id="wrap">
+<iframe id="frame" src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_08.html">
 </iframe>
+</div>
 
 ### 1.2 RMarkdown не работает:
 

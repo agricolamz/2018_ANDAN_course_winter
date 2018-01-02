@@ -3,9 +3,8 @@ title: "Презентация ioslides"
 output: ioslides_presentation
 bibliography: bibliography.bib
 ---
-
+# Markdown: базовое
 ## Markdown: базовое
-
 ### Подраздел на слайде...
 Давайте попробуем разное форматирование: _италик_, __жирный__, ~~зачеркивание~~
 
@@ -39,6 +38,7 @@ plot(pressure)
 src="https://www.youtube.com/watch?v=-_1MvSWL1e4">
 </iframe> 
 
+# Pandoc
 ## Pandoc
 
 2^10^ C~k~ $\frac{\pi}{\sum{n+1}}$
@@ -54,6 +54,7 @@ src="https://www.youtube.com/watch?v=-_1MvSWL1e4">
 
 Ссылка на библиографию @gordon02...
 
+# Javascript
 ## Javascript: DT
 
 ```{r}
