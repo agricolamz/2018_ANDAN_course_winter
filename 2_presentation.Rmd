@@ -77,7 +77,20 @@ cat ./data/ex_09.Rmd
 </iframe>
 </div>
 
-### 1.5 Еще оформление:
+### 1.5 Заметки {.tabset .tabset-fade .tabset-pills}
+Если добавить к адресу презентации `?presentme=true`, то получится [новое окно](https://agricolamz.github.io/2018_ANDAN_course_winter/ex_10.html?presentme=true), где будут отображаться заметки! Режим presenter view будет все время открываться, пока его не отключат командой `?presentme=false`.
+
+#### code
+```{bash, echo = FALSE}
+cat ./data/ex_10.Rmd
+```
+#### result
+<div id="wrap">
+<iframe id="frame" src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_10.html">
+</iframe>
+</div>
+
+### 1.6 Еще оформление:
 В yaml-шапке (тогда относится ко всем слайдам):
 ```
 output:
@@ -95,27 +108,29 @@ output:
 ```
 ##  Мой заголовок {.flexbox .vcenter}
 ```
+<div class="parallax"></div>
 
-### 1.6 Заметки {.tabset .tabset-fade .tabset-pills}
-Если добавить к адресу презентации `?presentme=true`, то получится [новое окно](https://agricolamz.github.io/2018_ANDAN_course_winter/ex_10.html?presentme=true), где будут отображаться заметки! Режим presenter view будет все время открываться, пока его не отключат командой `?presentme=false`.
-
+## 2. slidy
+### 2.1 Базовый RMarkdown {.tabset .tabset-fade .tabset-pills}
 #### code
 ```{bash, echo = FALSE}
-cat ./data/ex_10.Rmd
+cat ./data/ex_11.Rmd
 ```
 #### result
 <div id="wrap">
-<iframe id="frame" src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_10.html">
+<iframe id="frame" src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_11.html">
 </iframe>
 </div>
 
-## 2. slidy
+<div class="parallax"></div>
+
+## 3. ioslides vs. slidy
 
 <div class="parallax"></div>
 
-## 3. Другие системы
+## 4. Другие системы
 
-### 3.1 xaringan {.tabset .tabset-fade .tabset-pills}
+### 4.1 xaringan {.tabset .tabset-fade .tabset-pills}
 Смотрите [репозиторий](https://github.com/yihui/xaringan). Addin `moon_reader` позволяет видеть, что получается, сразу после сохранения .Rmd файла.
 
 ```{r}
@@ -131,7 +146,7 @@ devtools::install_github('yihui/xaringan')
 #### code
 [code](https://raw.githubusercontent.com/yihui/xaringan/master/inst/rmarkdown/templates/xaringan/skeleton/skeleton.Rmd)
 
-### 3.2 slidify {.tabset .tabset-fade .tabset-pills}
+### 4.2 slidify {.tabset .tabset-fade .tabset-pills}
 Смотрите [сайт](http://slidify.org/):
 ```{r, eval = FALSE}
 devtools::install_github('ramnathv/slidify')
@@ -159,3 +174,7 @@ devtools::install_github('ramnathv/slidify')
 <iframe id="frame" src="http://slidify.org/samples/shower/">
 </iframe>
 </div>
+
+### Вот и все!
+
+<div class="parallax"></div>

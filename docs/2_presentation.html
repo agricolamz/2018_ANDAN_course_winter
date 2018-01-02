@@ -441,7 +441,7 @@ datatable(mtcars)
 library(leaflet)
 leaflet() %&gt;% 
   addTiles() %&gt;%
-  addPopups(-93.65, 42.0285, &#39;Мы возможно &lt;b&gt;здесь&lt;/b&gt;&#39;)
+  addPopups(37.168254, 55.408408, &#39;Мы возможно &lt;b&gt;здесь&lt;/b&gt;&#39;)
 ```
 
 ## Список литературы</code></pre>
@@ -508,22 +508,8 @@ x
 </div>
 </div>
 </div>
-<div id="-" class="section level3">
-<h3>1.5 Еще оформление:</h3>
-<p>В yaml-шапке (тогда относится ко всем слайдам):</p>
-<pre><code>output:
-  ioslides_presentation:
-    widescreen: true
-    smaller: true
-    transition: faster
-    logo: logo.png</code></pre>
-<p>или после заголовка (тогда относится только к одному слайду):</p>
-<pre><code>##  Мой заголовок {.build .smaller}</code></pre>
-<p>Центрировать содержимое слайда можно следующими аргументами:</p>
-<pre><code>##  Мой заголовок {.flexbox .vcenter}</code></pre>
-</div>
 <div class="section level3 tabset tabset-fade tabset-pills">
-<h3>1.6 Заметки</h3>
+<h3>1.5 Заметки</h3>
 <p>Если добавить к адресу презентации <code>?presentme=true</code>, то получится <a href="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_10.html?presentme=true">новое окно</a>, где будут отображаться заметки! Режим presenter view будет все время открываться, пока его не отключат командой <code>?presentme=false</code>.</p>
 <div id="code-2" class="section level4">
 <h4>code</h4>
@@ -560,33 +546,140 @@ output: ioslides_presentation
 </div>
 </div>
 </div>
+<div id="-" class="section level3">
+<h3>1.6 Еще оформление:</h3>
+<p>В yaml-шапке (тогда относится ко всем слайдам):</p>
+<pre><code>output:
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+    transition: faster
+    logo: logo.png</code></pre>
+<p>или после заголовка (тогда относится только к одному слайду):</p>
+<pre><code>##  Мой заголовок {.build .smaller}</code></pre>
+<p>Центрировать содержимое слайда можно следующими аргументами:</p>
+<pre><code>##  Мой заголовок {.flexbox .vcenter}</code></pre>
+<div class="parallax">
+
+</div>
+</div>
 </div>
 <div id="slidy" class="section level2">
 <h2>2. slidy</h2>
+<div id="-rmarkdown-1" class="section level3 tabset tabset-fade tabset-pills">
+<h3>2.1 Базовый RMarkdown</h3>
+<div id="code-3" class="section level4">
+<h4>code</h4>
+<pre><code>---
+title: &quot;Презентация slidy&quot;
+output: slidy_presentation
+bibliography: bibliography.bib
+---
+## Markdown: базовое
+### Подраздел на слайде...
+Давайте попробуем разное форматирование: _италик_, __жирный__, ~~зачеркивание~~
+
+* список
+* список
+    * список
+
+### Ссылки
+
+[Ссылка 1](https://agricolamz.github.io/2018_ANDAN_course_winter/), &lt;https://agricolamz.github.io/2018_ANDAN_course_winter/&gt;
+
+&gt; Цитата...
+
+## Markdown: код
+
+Бывает такой датасет `cars`:
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Markdown: график
+
+```{r pressure}
+plot(pressure)
+```
+
+## html код
+
+&lt;iframe width=&quot;300&quot; height=&quot;250&quot;
+src=&quot;https://www.youtube.com/watch?v=-_1MvSWL1e4&quot;&gt;
+&lt;/iframe&gt; 
+
+## Pandoc
+
+2^10^ C~k~ $\frac{\pi}{\sum{n+1}}$
+
+Вот и сноска[^1]
+
+[^1]: Сноска, сноска, сноска
+
+(@) Славный пример номер раз.
+(@two) Славный пример номер два, у которого есть *имя*.
+
+Я могу сослаться на пример (@two)!
+
+Ссылка на библиографию @gordon02...
+
+## Javascript: DT
+
+```{r}
+library(DT)
+datatable(mtcars)
+```
+
+## Javascript: leaflet
+
+```{r, echo=FALSE}
+library(leaflet)
+leaflet() %&gt;% 
+  addTiles() %&gt;%
+  addPopups(37.168254, 55.408408, &#39;Мы возможно &lt;b&gt;здесь&lt;/b&gt;&#39;)
+```
+
+## Список литературы</code></pre>
+</div>
+<div id="result-3" class="section level4">
+<h4>result</h4>
+<div id="wrap">
+<iframe id="frame" src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_11.html">
+</iframe>
+</div>
+<div class="parallax">
+
+</div>
+</div>
+</div>
+</div>
+<div id="ioslides-vs.slidy" class="section level2">
+<h2>3. ioslides vs. slidy</h2>
 <div class="parallax">
 
 </div>
 </div>
 <div id="-" class="section level2">
-<h2>3. Другие системы</h2>
+<h2>4. Другие системы</h2>
 <div id="xaringan" class="section level3 tabset tabset-fade tabset-pills">
-<h3>3.1 xaringan</h3>
+<h3>4.1 xaringan</h3>
 <p>Смотрите <a href="https://github.com/yihui/xaringan">репозиторий</a>. Addin <code>moon_reader</code> позволяет видеть, что получается, сразу после сохранения .Rmd файла.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&#39;yihui/xaringan&#39;</span>)</code></pre></div>
-<div id="result-3" class="section level4">
+<div id="result-4" class="section level4">
 <h4>result</h4>
 <div id="wrap">
 <iframe id="frame" src="https://slides.yihui.name/xaringan/">
 </iframe>
 </div>
 </div>
-<div id="code-3" class="section level4">
+<div id="code-4" class="section level4">
 <h4>code</h4>
 <p><a href="https://raw.githubusercontent.com/yihui/xaringan/master/inst/rmarkdown/templates/xaringan/skeleton/skeleton.Rmd">code</a></p>
 </div>
 </div>
 <div id="slidify" class="section level3 tabset tabset-fade tabset-pills">
-<h3>3.2 slidify</h3>
+<h3>4.2 slidify</h3>
 <p>Смотрите <a href="http://slidify.org/">сайт</a>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&#39;ramnathv/slidify&#39;</span>)</code></pre></div>
 <p>Как пишет туториал, под Windows еще нужны <code>gcc</code> и <code>RTools</code>.</p>
@@ -617,6 +710,12 @@ output: ioslides_presentation
 <iframe id="frame" src="http://slidify.org/samples/shower/">
 </iframe>
 </div>
+</div>
+</div>
+<div id="--" class="section level3">
+<h3>Вот и все!</h3>
+<div class="parallax">
+
 </div>
 </div>
 </div>
