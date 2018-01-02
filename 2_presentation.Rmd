@@ -22,7 +22,7 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE, comment=NA)
     background-size: auto;
 }
     #wrap { width: 700px; height: 550px; padding: 0; overflow: hidden; }
-    #frame { width: 900px; height: 700px; border: 1px solid white; }
+    #frame { width: 900px; height: 700px; border: 1px solid LightGray; }
     #frame {  zoom: 0.75;
               -moz-transform: scale(0.7); 
               -moz-transform-origin: 0 0; }
