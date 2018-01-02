@@ -51,7 +51,6 @@ cat ./data/ex_08.Rmd
 ### 1.2 RMarkdown не работает:
 
 * markdown цитаты
-* голый html
 * pandoc сноска
 
 ### 1.3 Горячие клавиши
@@ -123,6 +122,11 @@ cat ./data/ex_11.Rmd
 </div>
 
 <div class="parallax"></div>
+
+### 1.2 RMarkdown не работает:
+
+* markdown цитаты?
+* pandoc сноска?
 
 ## 3. ioslides vs. slidy
 
