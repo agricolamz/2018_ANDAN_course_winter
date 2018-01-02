@@ -123,18 +123,16 @@ cat ./data/ex_11.Rmd
 
 <div class="parallax"></div>
 
-### 1.2 RMarkdown не работает:
+### 2.2 RMarkdown не работает:
 
 * markdown цитаты?
 * pandoc сноска?
 
-## 3. ioslides vs. slidy
-
 <div class="parallax"></div>
 
-## 4. Другие системы
+## 3. Другие системы
 
-### 4.1 xaringan {.tabset .tabset-fade .tabset-pills}
+### 3.1 xaringan {.tabset .tabset-fade .tabset-pills}
 Смотрите [репозиторий](https://github.com/yihui/xaringan). Addin `moon_reader` позволяет видеть, что получается, сразу после сохранения .Rmd файла.
 
 ```{r}
@@ -150,7 +148,7 @@ devtools::install_github('yihui/xaringan')
 #### code
 [code](https://raw.githubusercontent.com/yihui/xaringan/master/inst/rmarkdown/templates/xaringan/skeleton/skeleton.Rmd)
 
-### 4.2 slidify {.tabset .tabset-fade .tabset-pills}
+### 3.2 slidify {.tabset .tabset-fade .tabset-pills}
 Смотрите [сайт](http://slidify.org/):
 ```{r, eval = FALSE}
 devtools::install_github('ramnathv/slidify')
@@ -163,16 +161,19 @@ devtools::install_github('ramnathv/slidify')
 <iframe id="frame" src="http://slidify.org/samples/intro/">
 </iframe>
 </div>
+
 #### example 2
 <div id="wrap">
 <iframe id="frame" src="http://slidify.org/samples/deck.js/">
 </iframe>
 </div>
+
 #### example 3
 <div id="wrap">
 <iframe id="frame" src="http://slidify.org/samples/landslide/">
 </iframe>
 </div>
+
 #### example 4
 <div id="wrap">
 <iframe id="frame" src="http://slidify.org/samples/shower/">
@@ -180,6 +181,5 @@ devtools::install_github('ramnathv/slidify')
 </div>
 
 ### Вот и все!
-
 
 <div class="parallax"></div>
