@@ -37,6 +37,8 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE, comment=NA)
 * Новый слайд разделяется при помощи `##`
 * При помощи `#` делается монолитный слайд другого цвета с надписью посередине
 
+Подробнее [см. здесь.](http://rmarkdown.rstudio.com/ioslides_presentation_format.html)
+
 ### 1.1 Базовый RMarkdown {.tabset .tabset-fade .tabset-pills}
 #### code
 ```{bash, echo = FALSE}
@@ -110,6 +112,8 @@ output:
 <div class="parallax"></div>
 
 ## 2. slidy
+Подробнее [см. здесь.](http://rmarkdown.rstudio.com/slidy_presentation_format.html)
+
 ### 2.1 Базовый RMarkdown {.tabset .tabset-fade .tabset-pills}
 #### code
 ```{bash, echo = FALSE}
@@ -128,7 +132,41 @@ cat ./data/ex_11.Rmd
 * markdown цитаты?
 * pandoc сноска?
 
+### 2.3 Горячие клавиши
+
+* `c` показывает содержание
+* `f` включает/отключает отображение нижней панели
+* 'a' переходит в режим, когда видны все слайды
+* 's' уменьшает шрифт
+* 'b' увеличивает шрифт
+
 <div class="parallax"></div>
+
+### 2.4 Задержка на слайде {.tabset .tabset-fade .tabset-pills}
+
+Для булетов сделали особый знак `> -`, а вот аргумент `{.build}` не работает.
+
+#### code
+```{bash, echo = FALSE}
+cat ./data/ex_12.Rmd
+```
+#### result
+<div id="wrap">
+<iframe id="frame" src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_12.html">
+</iframe>
+</div>
+
+### 2.5 Еще оформление:
+В yaml-шапке (тогда относится ко всем слайдам):
+```
+output:
+  slidy_presentation:
+    font_adjustment: -1
+    footer: "Copyright (c) 2018, G. Moroz"
+```
+
+* аргумент `duration: 45` добавляет таймер в нижнюю панель (в минутах)
+* аргумент `highlight` имеет значения “default”, “tango”, “pygments”, “kate”, “monochrome”, “espresso”, “zenburn”, и “haddock”.
 
 ## 3. Другие системы
 

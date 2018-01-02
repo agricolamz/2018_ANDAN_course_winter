@@ -367,6 +367,7 @@ div.tocify {
 <li>Новый слайд разделяется при помощи <code>##</code></li>
 <li>При помощи <code>#</code> делается монолитный слайд другого цвета с надписью посередине</li>
 </ul>
+<p>Подробнее <a href="http://rmarkdown.rstudio.com/ioslides_presentation_format.html">см. здесь.</a></p>
 <div id="-rmarkdown" class="section level3 tabset tabset-fade tabset-pills">
 <h3>1.1 Базовый RMarkdown</h3>
 <div id="code" class="section level4">
@@ -578,6 +579,7 @@ output: ioslides_presentation
 </div>
 <div id="slidy" class="section level2">
 <h2>2. slidy</h2>
+<p>Подробнее <a href="http://rmarkdown.rstudio.com/slidy_presentation_format.html">см. здесь.</a></p>
 <div id="-rmarkdown-1" class="section level3 tabset tabset-fade tabset-pills">
 <h3>2.1 Базовый RMarkdown</h3>
 <div id="code-3" class="section level4">
@@ -683,9 +685,66 @@ leaflet() %&gt;%
 <li>markdown цитаты?</li>
 <li>pandoc сноска?</li>
 </ul>
+</div>
+<div id="--1" class="section level3">
+<h3>2.3 Горячие клавиши</h3>
+<ul>
+<li><code>c</code> показывает содержание</li>
+<li><code>f</code> включает/отключает отображение нижней панели</li>
+<li>‘a’ переходит в режим, когда видны все слайды</li>
+<li>‘s’ уменьшает шрифт</li>
+<li>‘b’ увеличивает шрифт</li>
+</ul>
 <div class="parallax">
 
 </div>
+</div>
+<div id="---1" class="section level3 tabset tabset-fade tabset-pills">
+<h3>2.4 Задержка на слайде</h3>
+<p>Для булетов сделали особый знак <code>&gt; -</code>, а вот аргумент <code>{.build}</code> не работает.</p>
+<div id="code-4" class="section level4">
+<h4>code</h4>
+<pre><code>---
+title: &quot;Задержка на слайде&quot;
+output: slidy_presentation
+---
+  
+## Список
+  
+&gt; - Eat eggs
+&gt; - Drink coffee
+
+## Текст {.build}
+
+А вот аргумент `{.build}` не работает...
+
+```{r}
+x &lt;- 1:10
+```
+
+```{r}
+x
+```</code></pre>
+</div>
+<div id="result-4" class="section level4">
+<h4>result</h4>
+<div id="wrap">
+<iframe id="frame" src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_12.html">
+</iframe>
+</div>
+</div>
+</div>
+<div id="--1" class="section level3">
+<h3>2.5 Еще оформление:</h3>
+<p>В yaml-шапке (тогда относится ко всем слайдам):</p>
+<pre><code>output:
+  slidy_presentation:
+    font_adjustment: -1
+    footer: &quot;Copyright (c) 2018, G. Moroz&quot;</code></pre>
+<ul>
+<li>аргумент <code>duration: 45</code> добавляет таймер в нижнюю панель (в минутах)</li>
+<li>аргумент <code>highlight</code> имеет значения “default”, “tango”, “pygments”, “kate”, “monochrome”, “espresso”, “zenburn”, и “haddock”.</li>
+</ul>
 </div>
 </div>
 <div id="-" class="section level2">
@@ -694,14 +753,14 @@ leaflet() %&gt;%
 <h3>3.1 xaringan</h3>
 <p>Смотрите <a href="https://github.com/yihui/xaringan">репозиторий</a>. Addin <code>moon_reader</code> позволяет видеть, что получается, сразу после сохранения .Rmd файла.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&#39;yihui/xaringan&#39;</span>)</code></pre></div>
-<div id="result-4" class="section level4">
+<div id="result-5" class="section level4">
 <h4>result</h4>
 <div id="wrap">
 <iframe id="frame" src="https://slides.yihui.name/xaringan/">
 </iframe>
 </div>
 </div>
-<div id="code-4" class="section level4">
+<div id="code-5" class="section level4">
 <h4>code</h4>
 <p><a href="https://raw.githubusercontent.com/yihui/xaringan/master/inst/rmarkdown/templates/xaringan/skeleton/skeleton.Rmd">code</a></p>
 </div>
