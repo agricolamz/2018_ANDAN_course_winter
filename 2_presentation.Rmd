@@ -37,7 +37,7 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE, comment=NA)
 * Новый слайд разделяется при помощи `##`
 * При помощи `#` делается монолитный слайд другого цвета с надписью посередине
 
-### 1.1 RMarkdown возможности {.tabset .tabset-fade .tabset-pills}
+### 1.1 Базовый RMarkdown {.tabset .tabset-fade .tabset-pills}
 #### code
 ```{bash, echo = FALSE}
 cat ./data/ex_08.Rmd
@@ -53,6 +53,29 @@ cat ./data/ex_08.Rmd
 * markdown цитаты
 * голый html
 * pandoc сноска
+
+### 1.3 Горячие клавиши
+
+* `f` (fullscreen) полноэкранный режим
+* `w` (widescreen) широкоэкранный режим
+* `o` (overview) режим с предпросмотром
+* `h` (code highlight) режим с подсветкой кода
+* `p` (presenter notes) показать заметки
+* `Esc` выход из всех режимов
+
+### 1.4 Задержка на слайде {.tabset .tabset-fade .tabset-pills}
+
+Для булетов сделали особый знак `> -`, а все остальное можно делать добавляя `{.build}` после заголовка.
+
+#### code
+```{bash, echo = FALSE}
+cat ./data/ex_09.Rmd
+```
+#### result
+<div id="wrap">
+<iframe id="frame" src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_09.html">
+</iframe>
+</div>
 
 <div class="parallax"></div>
 
