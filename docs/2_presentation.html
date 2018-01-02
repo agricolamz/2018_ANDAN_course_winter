@@ -367,8 +367,8 @@ div.tocify {
 <li>Новый слайд разделяется при помощи <code>##</code></li>
 <li>При помощи <code>#</code> делается монолитный слайд другого цвета с надписью посередине</li>
 </ul>
-<div id="rmarkdown-" class="section level3 tabset tabset-fade tabset-pills">
-<h3>1.1 RMarkdown возможности</h3>
+<div id="-rmarkdown" class="section level3 tabset tabset-fade tabset-pills">
+<h3>1.1 Базовый RMarkdown</h3>
 <div id="code" class="section level4">
 <h4>code</h4>
 <pre><code>---
@@ -461,8 +461,110 @@ leaflet() %&gt;%
 <li>голый html</li>
 <li>pandoc сноска</li>
 </ul>
+</div>
+<div id="-" class="section level3">
+<h3>1.3 Горячие клавиши</h3>
+<ul>
+<li><code>f</code> (fullscreen) полноэкранный режим</li>
+<li><code>w</code> (widescreen) широкоэкранный режим</li>
+<li><code>o</code> (overview) режим с предпросмотром</li>
+<li><code>h</code> (code highlight) режим с подсветкой кода</li>
+<li><code>p</code> (presenter notes) показать заметки</li>
+<li><code>Esc</code> выход из всех режимов</li>
+</ul>
+</div>
+<div id="--" class="section level3 tabset tabset-fade tabset-pills">
+<h3>1.4 Задержка на слайде</h3>
+<p>Для булетов сделали особый знак <code>&gt; -</code>, а все остальное можно делать добавляя <code>{.build}</code> после заголовка.</p>
+<div id="code-1" class="section level4">
+<h4>code</h4>
+<pre><code>---
+title: &quot;Задержка на слайде&quot;
+output: ioslides_presentation
+---
+
+## Список
+  
+&gt; - Eat eggs
+&gt; - Drink coffee
+
+## Текст {.build}
+
+Можно вставить текст. И даже код...
+
+```{r}
+x &lt;- 1:10
+```
+
+```{r}
+x
+```</code></pre>
+</div>
+<div id="result-1" class="section level4">
+<h4>result</h4>
+<div id="wrap">
+<iframe id="frame" src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_09.html">
+</iframe>
+</div>
+</div>
+</div>
+<div id="-" class="section level3">
+<h3>1.5 Еще оформление:</h3>
+<p>В yaml-шапке:</p>
+<pre><code>output:
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+    transition: faster
+    logo: logo.png</code></pre>
+<p>или после заголовка:</p>
+<pre><code>##  Мой заголовок {.build .smaller}</code></pre>
+<p>Центрировать содержимое слайда можно следующими командами:</p>
+<pre><code>##  Мой заголовок {.flexbox .vcenter}</code></pre>
+</div>
+<div id="-" class="section level3 tabset tabset-fade tabset-pills">
+<h3>1.6 Время, заметки</h3>
+<p>Если добавить к адресу <code>?presentme=true</code> #### code</p>
+<pre><code>---
+title: &quot;Present mode&quot;
+output: ioslides_presentation
+---
+
+## Вот мой первый слайд {.build}
+
+* Это все увидят
+* и это
+
+&lt;div class=&quot;notes&quot;&gt;
+А это моя *заметка*.
+
+- И она тоже понимает Markdown
+- $\frac{\pi}{\sum_i^n i + \sin(i)}$
+&lt;/div&gt;
+
+## Вот мой второй слайд
+
+А это мой второй слайд
+
+&lt;div class=&quot;notes&quot;&gt;
+И моя новая заметка!
+&lt;/div&gt;</code></pre>
+<div id="result-2" class="section level4">
+<h4>result</h4>
+<div id="wrap">
+<iframe id="frame" src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_10.html">
+</iframe>
+</div>
+</div>
+<div id="presentmetrue" class="section level4">
+<h4><code>?presentme=true</code></h4>
+<div id="wrap">
+<iframe id="frame" src="https://agricolamz.github.io/2018_ANDAN_course_winter/ex_10.html?presentme=true">
+</iframe>
+</div>
 <div class="parallax">
 
+</div>
 </div>
 </div>
 </div>
