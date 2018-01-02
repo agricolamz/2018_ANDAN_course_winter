@@ -32,10 +32,22 @@ plot(pressure)
 ```
 
 ## html код
+```
+<dl>
+  <dt>Чистый HTML</dt>
+  <dd>Еще можно писать в HTML.</dd>
 
-<iframe width="300" height="250"
-src="https://www.youtube.com/watch?v=-_1MvSWL1e4">
-</iframe> 
+  <dt>и Markdown в  HTML </dt>
+  <dd> даже работает **правильно**. Но можно использовать и <em>теги</em>.</dd>
+</dl>
+```
+<dl>
+  <dt>Чистый HTML</dt>
+  <dd>Еще можно писать в HTML.</dd>
+
+  <dt>и Markdown в  HTML </dt>
+  <dd> даже работает **правильно**. Но можно использовать и <em>теги</em>.</dd>
+</dl>
 
 ## Pandoc
 
