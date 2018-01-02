@@ -140,8 +140,6 @@ cat ./data/ex_11.Rmd
 * 's' уменьшает шрифт
 * 'b' увеличивает шрифт
 
-<div class="parallax"></div>
-
 ### 2.4 Задержка на слайде {.tabset .tabset-fade .tabset-pills}
 
 Для булетов сделали особый знак `> -`, а вот аргумент `{.build}` не работает.
@@ -167,6 +165,8 @@ output:
 
 * аргумент `duration: 45` добавляет таймер в нижнюю панель (в минутах)
 * аргумент `highlight` имеет значения “default”, “tango”, “pygments”, “kate”, “monochrome”, “espresso”, “zenburn”, и “haddock”.
+
+<div class="parallax"></div>
 
 ## 3. Другие системы
 
