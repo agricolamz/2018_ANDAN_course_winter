@@ -1,0 +1,87 @@
+---
+title: "4. `bookdown` и `blogdown`"
+author: "Г. Мороз <br> Презентация доступна по ссылке: goo.gl/NDPcfa"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+```
+
+<style>
+.parallax {
+    /* The image used */
+    background-image: url("bookdown.png");
+
+    /* Set a specific height */
+    min-height: 350px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+.parallax2 {
+    /* The image used */
+    background-image: url("blogdown.png");
+
+    /* Set a specific height */
+    min-height: 350px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+</style>
+
+<div class="parallax"></div>
+
+## 1. Bookdown
+Подробнее [см. страницу](https://bookdown.org/) и [GitHub пакета](https://github.com/rstudio/bookdown).
+
+```{r, eval = FALSE}
+install.packages("bookdown")
+```
+
+
+* клонируем/скачиваем [вот этот репозиторий](https://github.com/rstudio/bookdown-demo)
+* открываем файл `bookdown-demo.Rproj`
+* открываем вкладку `Build` и нажимаем на `Build Book`
+* можно открывать отдельные .Rmd файлы и нажимать `Knit` исправляя отдельные файлы, тогда будут компелироваться только они
+
+А еще бывает пакет `bookdownplus`. Подробнее [см. страницу](https://bookdown.org/baydap/bookdownplus/) и [GitHub пакета](https://github.com/pzhaonet/bookdownplus).
+```{r, eval = FALSE}
+install.packages("bookdownplus")
+```
+
+> With `bookdownplus` you can easily:
+> 
+> * write a mail in an elegant layout,
+> * write a laboratory journal, or a personal diary,
+> * draw a monthly or weekly or conference calendar,
+> * and, of course, write academic articles in your favourite way,
+> * with chemical molecular formulae and equations,
+> * even in Chinese,
+> * write guitar chords,
+> * and more wonders are coming soon.
+
+<div class="parallax"></div>
+<div class="parallax2"></div>
+
+## 2. Blogdown
+Подробнее [см. страницу](https://bookdown.org/yihui/blogdown/) и [GitHub пакета](https://github.com/rstudio/blogdown).
+
+```{r, eval = FALSE}
+install.packages("blogdown")
+blogdown::install_hugo()
+```
+
+* создайте новый проект
+
+```{r}
+blogdown::new_site()
+```
+
+<div class="parallax2"></div>

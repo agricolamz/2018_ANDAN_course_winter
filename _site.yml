@@ -5,8 +5,8 @@ navbar:
       href: 1_document.html
     - text: "2. презентация"
       href: 2_presentation.html
-    - text: "3. блог, книга"
-      href: 3_blog_book.html
-    - text: "4. сайт, GitHub Pages"
-      href: 4_site_git.html
+    - text: "3. сайт, GitHub Pages"
+      href: 3_site_git.html
+    - text: "4. блог, книга"
+      href: 4_blog_book.html
 output_dir: docs

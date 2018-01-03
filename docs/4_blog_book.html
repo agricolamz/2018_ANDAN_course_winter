@@ -28,6 +28,49 @@
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -162,7 +205,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2,h3,h4",
+      selectors: "h1,h2,h3",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
@@ -268,10 +311,10 @@ div.tocify {
   <a href="2_presentation.html">2. презентация</a>
 </li>
 <li>
-  <a href="3_blog_book.html">3. блог, книга</a>
+  <a href="3_site_git.html">3. сайт, GitHub Pages</a>
 </li>
 <li>
-  <a href="4_site_git.html">4. сайт, GitHub Pages</a>
+  <a href="4_blog_book.html">4. блог, книга</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -285,8 +328,8 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore"><ol start="3" style="list-style-type: decimal">
-<li>RMarkdown блог и книга</li>
+<h1 class="title toc-ignore"><ol start="4" style="list-style-type: decimal">
+<li><code>bookdown</code> и <code>blogdown</code></li>
 </ol></h1>
 <h4 class="author"><em>Г. Мороз <br> Презентация доступна по ссылке: goo.gl/NDPcfa</em></h4>
 
@@ -296,7 +339,20 @@ div.tocify {
 <style>
 .parallax {
     /* The image used */
-    background-image: url("1_logo.jpg");
+    background-image: url("bookdown.png");
+
+    /* Set a specific height */
+    min-height: 350px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+.parallax2 {
+    /* The image used */
+    background-image: url("blogdown.png");
 
     /* Set a specific height */
     min-height: 350px; 
@@ -311,19 +367,48 @@ div.tocify {
 <div class="parallax">
 
 </div>
-<div id="--r--rstudio" class="section level2">
-<h2>0. Как добыть R и Rstudio</h2>
-<p>Бесплатное программное обеспечение:</p>
+<div id="bookdown" class="section level2">
+<h2>1. Bookdown</h2>
+<p>Подробнее <a href="https://bookdown.org/">см. страницу</a> и <a href="https://github.com/rstudio/bookdown">GitHub пакета</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>)</code></pre></div>
 <ul>
-<li><a href="https://cran.r-project.org/">R</a></li>
-<li><a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio</a></li>
-<li>Если не хочется ставить сторонние программы:
-<ul>
-<li><a href="https://rstudio.cloud/">RStudio Cloud</a></li>
-<li><a href="https://www.rollapp.com/app/rstudio">rollApp</a></li>
-</ul></li>
+<li>клонируем/скачиваем <a href="https://github.com/rstudio/bookdown-demo">вот этот репозиторий</a></li>
+<li>открываем файл <code>bookdown-demo.Rproj</code></li>
+<li>открываем вкладку <code>Build</code> и нажимаем на <code>Build Book</code></li>
+<li>можно открывать отдельные .Rmd файлы и нажимать <code>Knit</code> исправляя отдельные файлы, тогда будут компелироваться только они</li>
 </ul>
+<p>А еще бывает пакет <code>bookdownplus</code>. Подробнее <a href="https://bookdown.org/baydap/bookdownplus/">см. страницу</a> и <a href="https://github.com/pzhaonet/bookdownplus">GitHub пакета</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;bookdownplus&quot;</span>)</code></pre></div>
+<blockquote>
+<p>With <code>bookdownplus</code> you can easily:</p>
+<ul>
+<li>write a mail in an elegant layout,</li>
+<li>write a laboratory journal, or a personal diary,</li>
+<li>draw a monthly or weekly or conference calendar,</li>
+<li>and, of course, write academic articles in your favourite way,</li>
+<li>with chemical molecular formulae and equations,</li>
+<li>even in Chinese,</li>
+<li>write guitar chords,</li>
+<li>and more wonders are coming soon.</li>
+</ul>
+</blockquote>
 <div class="parallax">
+
+</div>
+<div class="parallax2">
+
+</div>
+</div>
+<div id="blogdown" class="section level2">
+<h2>2. Blogdown</h2>
+<p>Подробнее <a href="https://bookdown.org/yihui/blogdown/">см. страницу</a> и <a href="https://github.com/rstudio/blogdown">GitHub пакета</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;blogdown&quot;</span>)
+blogdown<span class="op">::</span><span class="kw">install_hugo</span>()</code></pre></div>
+<ul>
+<li>создайте новый проект</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">blogdown<span class="op">::</span><span class="kw">new_site</span>()</code></pre></div>
+<div class="parallax2">
 
 </div>
 </div>
