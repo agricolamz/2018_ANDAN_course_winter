@@ -1,6 +1,6 @@
 ---
 title: "4. `bookdown` и `blogdown`"
-author: "Г. Мороз <br> Презентация доступна по ссылке: goo.gl/NDPcfa"
+author: "Г. Мороз <br> Презентация доступна по ссылке: goo.gl/sJdfSi"
 ---
 
 ```{r setup, include=FALSE}
