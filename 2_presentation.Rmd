@@ -170,21 +170,15 @@ output:
 
 ## 3. Другие системы
 
-### 3.1 xaringan {.tabset .tabset-fade .tabset-pills}
+### 3.1 xaringan
 Смотрите [репозиторий](https://github.com/yihui/xaringan). Addin `moon_reader` позволяет видеть, что получается, сразу после сохранения .Rmd файла.
 
 ```{r}
 devtools::install_github('yihui/xaringan')
 ```
 
-#### result
-<div id="wrap">
-<iframe id="frame" src="https://agricolamz.github.io/2018_ANDAN_course_winter/xaringan.html">
-</iframe>
-</div>
-
-#### code
-[code](https://raw.githubusercontent.com/yihui/xaringan/master/inst/rmarkdown/templates/xaringan/skeleton/skeleton.Rmd)
+* [result](https://slides.yihui.name/xaringan/)
+* [code](https://raw.githubusercontent.com/yihui/xaringan/master/inst/rmarkdown/templates/xaringan/skeleton/skeleton.Rmd)
 
 ### 3.2 slidify {.tabset .tabset-fade .tabset-pills}
 Смотрите [сайт](http://slidify.org/):
@@ -194,30 +188,9 @@ devtools::install_github('ramnathv/slidify')
 
 Как пишет туториал, под Windows еще нужны `gcc` и `RTools`.
 
-#### example 1
-<div id="wrap">
-<iframe id="frame" src="http://slidify.org/samples/intro/">
-</iframe>
-</div>
-
-#### example 2
-<div id="wrap">
-<iframe id="frame" src="http://slidify.org/samples/deck.js/">
-</iframe>
-</div>
-
-#### example 3
-<div id="wrap">
-<iframe id="frame" src="http://slidify.org/samples/landslide/">
-</iframe>
-</div>
-
-#### example 4
-<div id="wrap">
-<iframe id="frame" src="http://slidify.org/samples/shower/">
-</iframe>
-</div>
-
-### Вот и все!
+* [example 1](http://slidify.org/samples/intro/)
+* [example 2](http://slidify.org/samples/deck.js/)
+* [example 3](http://slidify.org/samples/landslide/)
+* [example 4](http://slidify.org/samples/shower/)
 
 <div class="parallax"></div>
