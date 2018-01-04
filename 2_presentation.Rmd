@@ -42,7 +42,7 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE, comment=NA)
 ### 1.1 Базовый RMarkdown {.tabset .tabset-fade .tabset-pills}
 #### code
 ```{bash, echo = FALSE}
-cat ./data/ex_08.Rmd
+cat ./ex_08.Rmd
 ```
 #### result
 <div id="wrap">
@@ -70,7 +70,7 @@ cat ./data/ex_08.Rmd
 
 #### code
 ```{bash, echo = FALSE}
-cat ./data/ex_09.Rmd
+cat ./ex_09.Rmd
 ```
 #### result
 <div id="wrap">
@@ -83,7 +83,7 @@ cat ./data/ex_09.Rmd
 
 #### code
 ```{bash, echo = FALSE}
-cat ./data/ex_10.Rmd
+cat ./ex_10.Rmd
 ```
 #### result
 <div id="wrap">
@@ -117,7 +117,7 @@ output:
 ### 2.1 Базовый RMarkdown {.tabset .tabset-fade .tabset-pills}
 #### code
 ```{bash, echo = FALSE}
-cat ./data/ex_11.Rmd
+cat ./ex_11.Rmd
 ```
 #### result
 <div id="wrap">
@@ -146,7 +146,7 @@ cat ./data/ex_11.Rmd
 
 #### code
 ```{bash, echo = FALSE}
-cat ./data/ex_12.Rmd
+cat ./ex_12.Rmd
 ```
 #### result
 <div id="wrap">
