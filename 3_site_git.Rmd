@@ -1,16 +1,29 @@
 ---
-title: "3. RMarkdown  сайт. GitHub pages"
+title: "3. GitHub pages. flexdashboard. RMarkdown сайт."
 author: "Г. Мороз <br> Презентация доступна по ссылке: goo.gl/nCKMGh"
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, comment=NA)
 ```
 
 <style>
 .parallax {
     /* The image used */
-    background-image: url("1_logo.jpg");
+    background-image: url("website.png");
+
+    /* Set a specific height */
+    min-height: 350px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+.parallax2 {
+    /* The image used */
+    background-image: url("dry.png");
 
     /* Set a specific height */
     min-height: 350px; 
@@ -25,15 +38,90 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE)
 
 <div class="parallax"></div>
 
-## 0. Как добыть R и Rstudio
+## 1. Одиночная страница из .Rmd
 
-Бесплатное программное обеспечение:
+* [RPubs](https://rpubs.com/)
+* [RStudio connect](https://www.rstudio.com/products/connect/) платный, так как позволяет хранить еще и Shiny
+* [GitHub pages](https://pages.github.com/) может хостить и целые сайты, например, [тот, который вы сейчас смотрите](https://github.com/agricolamz/2018_ANDAN_course_winter), так что имеет смысл одиночный .html переназвать index.html[^1].
+* Собственный/университетский сервер с открытым портом
+* Какой-то из результатов по запросу "Where can I publish my website for free"
 
-* [R](https://cran.r-project.org/)
-* [RStudio](https://www.rstudio.com/products/rstudio/download/#download)
-* Если не хочется ставить сторонние программы:
-    * [RStudio Cloud](https://rstudio.cloud/)
-    * [rollApp](https://www.rollapp.com/app/rstudio)
+[^1]: Это тупо, что нельзя называть файл, как хочется. В целом это просто традиция, которой GitHub придерживается. Посмотрите еще вот [здесь ответы](https://www.quora.com/Why-is-the-default-html-file-called-index-html).
 
 <div class="parallax"></div>
 
+## 2 `flexdashboard`
+Для одиночных страниц придумали пакет `flexdashboard`, который позволяет создавать одиночную страничку с контролем над расположением объектов на ней. Подробнее [см. страницу](http://rmarkdown.rstudio.com/flexdashboard/) и [GitHub пакета](https://github.com/rstudio/flexdashboard).
+
+<div class="parallax"></div>
+
+## 3. Сайт в RMarkdown
+
+Подробнее можно прочитать [здесь](rmarkdown.rstudio.com/rmarkdown_websites.html).
+
+Алгоритм создания сайта в `RMarkdown` не очень то сложный:
+
+* создайте кучу файлов .Rmd, отвечающих за отдельные страницы (в том числе дефольный index.Rmd) (строго говоря, на этом шаге можно остановиться)
+* создайте макет сайта в файле _site.yml
+* в соответствующей папке скажите `rmarkdown::render_site()`
+* положите сайт на сервер
+
+## 3.1 Макет сайта
+
+_site.yml
+
+```
+name: "my-website"
+navbar:
+  title: "My Website"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Самое важное на свете"
+      href:  1_most_imp.html
+    - text: "Самое не важное на свете"
+      href: 2_least_imp.html
+```
+
+Обычно я еще добавляю строчку `output_dir: docs`.
+
+Можно добавить меню:
+```
+name: "my-website"
+navbar:
+  title: "My Website"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Самое важное на свете"
+      href:  1_most_imp.html
+    - text: "Самое не важное на свете"
+      href: 2_least_imp.html
+    icon: fa-gear
+    menu:
+      - text: "Еще что-то"
+        href: 3_something.html
+      - text: "И это не забудьте"
+        href: 4_not_forget.html
+```
+
+<div class="parallax2"></div>
+
+## 3.2 Общая yml-шапка
+Имеет смысл создать файл _output.yml и написать yml-шапку один раз. Например, вот _output.yml для данного сайта:
+```{bash, echo = FALSE}
+cat ./_output.yml
+```
+
+Единственное, что здесь необычное, это вот эта вот штуковина:
+```
+    include:
+      after_body: footer.html
+```
+
+Где footer.html содержит что-нибудь в этом роде:
+```
+<p>Copyright &copy; 2016 ICEDAN, Inc. All rights reserved.</p>
+```
+
+<div class="parallax"></div>

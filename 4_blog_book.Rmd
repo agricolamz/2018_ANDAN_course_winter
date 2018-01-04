@@ -4,7 +4,7 @@ author: "Г. Мороз <br> Презентация доступна по ссы
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+knitr::opts_chunk$set(eval = FALSE, message = FALSE, warning = FALSE)
 ```
 
 <style>
@@ -41,7 +41,7 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE)
 ## 1. Bookdown
 Подробнее [см. страницу](https://bookdown.org/) и [GitHub пакета](https://github.com/rstudio/bookdown).
 
-```{r, eval = FALSE}
+```{r}
 install.packages("bookdown")
 ```
 
@@ -52,7 +52,7 @@ install.packages("bookdown")
 * можно открывать отдельные .Rmd файлы и нажимать `Knit` исправляя отдельные файлы, тогда будут компелироваться только они
 
 А еще бывает пакет `bookdownplus`. Подробнее [см. страницу](https://bookdown.org/baydap/bookdownplus/) и [GitHub пакета](https://github.com/pzhaonet/bookdownplus).
-```{r, eval = FALSE}
+```{r}
 install.packages("bookdownplus")
 ```
 
@@ -73,7 +73,7 @@ install.packages("bookdownplus")
 ## 2. Blogdown
 Подробнее [см. страницу](https://bookdown.org/yihui/blogdown/) и [GitHub пакета](https://github.com/rstudio/blogdown).
 
-```{r, eval = FALSE}
+```{r}
 install.packages("blogdown")
 blogdown::install_hugo()
 ```

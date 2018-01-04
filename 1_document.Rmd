@@ -49,6 +49,8 @@ install.packages("rmarkdown")
 rmarkdown::render("ваш_файл.Rmd")
 ```
 
+или кнопочкой Knit.
+
 #### code
 ```{bash, echo = FALSE}
 cat ./data/ex_01.Rmd

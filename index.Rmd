@@ -9,12 +9,15 @@ output:
 ### Библиотеки:
 ```{r, message=FALSE}
 packageVersion("rmarkdown")
-packageVersion("blogdown")
-packageVersion("bookdown")
-packageVersion("xaringan")
-packageVersion("ggplot2")
 packageVersion("DT")
 packageVersion("leaflet")
+packageVersion("ggplot2")
 packageVersion("plotly")
+packageVersion("visNetwork")
+packageVersion("slidify")
+packageVersion("xaringan")
+packageVersion("flexdashboard")
+packageVersion("blogdown")
+packageVersion("bookdown")
 ```
 

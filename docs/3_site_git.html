@@ -286,7 +286,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore"><ol start="3" style="list-style-type: decimal">
-<li>RMarkdown сайт. GitHub pages</li>
+<li>GitHub pages. flexdashboard. RMarkdown сайт.</li>
 </ol></h1>
 <h4 class="author"><em>Г. Мороз <br> Презентация доступна по ссылке: goo.gl/nCKMGh</em></h4>
 
@@ -296,7 +296,20 @@ div.tocify {
 <style>
 .parallax {
     /* The image used */
-    background-image: url("1_logo.jpg");
+    background-image: url("website.png");
+
+    /* Set a specific height */
+    min-height: 350px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+.parallax2 {
+    /* The image used */
+    background-image: url("dry.png");
 
     /* Set a specific height */
     min-height: 350px; 
@@ -311,23 +324,103 @@ div.tocify {
 <div class="parallax">
 
 </div>
-<div id="--r--rstudio" class="section level2">
-<h2>0. Как добыть R и Rstudio</h2>
-<p>Бесплатное программное обеспечение:</p>
+<div id="---.rmd" class="section level2">
+<h2>1. Одиночная страница из .Rmd</h2>
 <ul>
-<li><a href="https://cran.r-project.org/">R</a></li>
-<li><a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio</a></li>
-<li>Если не хочется ставить сторонние программы:
-<ul>
-<li><a href="https://rstudio.cloud/">RStudio Cloud</a></li>
-<li><a href="https://www.rollapp.com/app/rstudio">rollApp</a></li>
-</ul></li>
+<li><a href="https://rpubs.com/">RPubs</a></li>
+<li><a href="https://www.rstudio.com/products/connect/">RStudio connect</a> платный, так как позволяет хранить еще и Shiny</li>
+<li><a href="https://pages.github.com/">GitHub pages</a> может хостить и целые сайты, например, <a href="https://github.com/agricolamz/2018_ANDAN_course_winter">тот, который вы сейчас смотрите</a>, так что имеет смысл одиночный .html переназвать index.html<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</li>
+<li>Собственный/университетский сервер с открытым портом</li>
+<li>Какой-то из результатов по запросу “Where can I publish my website for free”</li>
 </ul>
 <div class="parallax">
 
 </div>
 </div>
+<div id="flexdashboard" class="section level2">
+<h2>2 <code>flexdashboard</code></h2>
+<p>Для одиночных страниц придумали пакет <code>flexdashboard</code>, который позволяет создавать одиночную страничку с контролем над расположением объектов на ней. Подробнее <a href="http://rmarkdown.rstudio.com/flexdashboard/">см. страницу</a> и <a href="https://github.com/rstudio/flexdashboard">GitHub пакета</a>.</p>
+<div class="parallax">
 
+</div>
+</div>
+<div id="--rmarkdown" class="section level2">
+<h2>3. Сайт в RMarkdown</h2>
+<p>Подробнее можно прочитать <a href="rmarkdown.rstudio.com/rmarkdown_websites.html">здесь</a>.</p>
+<p>Алгоритм создания сайта в <code>RMarkdown</code> не очень то сложный:</p>
+<ul>
+<li>создайте кучу файлов .Rmd, отвечающих за отдельные страницы (в том числе дефольный index.Rmd) (строго говоря, на этом шаге можно остановиться)</li>
+<li>создайте макет сайта в файле _site.yml</li>
+<li>в соответствующей папке скажите <code>rmarkdown::render_site()</code></li>
+<li>положите сайт на сервер</li>
+</ul>
+</div>
+<div id="-" class="section level2">
+<h2>3.1 Макет сайта</h2>
+<p>_site.yml</p>
+<pre><code>name: &quot;my-website&quot;
+navbar:
+  title: &quot;My Website&quot;
+  left:
+    - text: &quot;Home&quot;
+      href: index.html
+    - text: &quot;Самое важное на свете&quot;
+      href:  1_most_imp.html
+    - text: &quot;Самое не важное на свете&quot;
+      href: 2_least_imp.html</code></pre>
+<p>Обычно я еще добавляю строчку <code>output_dir: docs</code>.</p>
+<p>Можно добавить меню:</p>
+<pre><code>name: &quot;my-website&quot;
+navbar:
+  title: &quot;My Website&quot;
+  left:
+    - text: &quot;Home&quot;
+      href: index.html
+    - text: &quot;Самое важное на свете&quot;
+      href:  1_most_imp.html
+    - text: &quot;Самое не важное на свете&quot;
+      href: 2_least_imp.html
+    icon: fa-gear
+    menu:
+      - text: &quot;Еще что-то&quot;
+        href: 3_something.html
+      - text: &quot;И это не забудьте&quot;
+        href: 4_not_forget.html</code></pre>
+<div class="parallax2">
+
+</div>
+</div>
+<div id="-yml-" class="section level2">
+<h2>3.2 Общая yml-шапка</h2>
+<p>Имеет смысл создать файл _output.yml и написать yml-шапку один раз. Например, вот _output.yml для данного сайта:</p>
+<pre><code>html_document:
+    theme: spacelab
+    highlight: pygments
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+    smooth_scroll: false
+    df_print: paged
+    include:
+      after_body: footer.html</code></pre>
+<p>Единственное, что здесь необычное, это вот эта вот штуковина:</p>
+<pre><code>    include:
+      after_body: footer.html</code></pre>
+<p>Где footer.html содержит что-нибудь в этом роде:</p>
+<pre><code>&lt;p&gt;Copyright &amp;copy; 2016 ICEDAN, Inc. All rights reserved.&lt;/p&gt;</code></pre>
+<div class="parallax">
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Это тупо, что нельзя называть файл, как хочется. В целом это просто традиция, которой GitHub придерживается. Посмотрите еще вот <a href="https://www.quora.com/Why-is-the-default-html-file-called-index-html">здесь ответы</a>.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+
+<p><center> &copy; Гарик Мороз 2018 с помощью RMarkdown. Исходный код на 
+<a href="https://github.com/agricolamz/2018_ANDAN_course_winter"> GitHub <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png"  style="width:30px;height:30px;border:0"></a></center> </p>
 
 
 </div>

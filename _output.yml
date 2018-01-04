@@ -6,3 +6,5 @@ html_document:
     toc_float: yes
     smooth_scroll: false
     df_print: paged
+    include:
+      after_body: footer.html
