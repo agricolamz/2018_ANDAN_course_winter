@@ -53,7 +53,7 @@ rmarkdown::render("ваш_файл.Rmd")
 
 #### code
 ```{bash, echo = FALSE}
-cat ./ex_01.Rmd
+cat ./data/ex_01.Rmd
 ```
 
 <div class="parallax"></div>
@@ -155,7 +155,7 @@ __жирный__ или **другой жирный**
 Код нужно оформалять вот так `rmarkdown::render()`
 
 ```{bash, echo = FALSE}
-cat ./ex_02.Rmd
+cat ./data/ex_02.Rmd
 ```
 
 ```{python}
@@ -262,7 +262,7 @@ $$\frac{\pi}{\sum{n+1}}$$
 ### 4.1 Язык программирования {.tabset .tabset-fade .tabset-pills}
 #### code
 ```{bash, echo = FALSE}
-cat ./ex_03.Rmd
+cat ./data/ex_03.Rmd
 ```
 
 #### result
@@ -274,7 +274,7 @@ cat ./ex_03.Rmd
 ### 4.2 Появление и исполнение кода {.tabset .tabset-fade .tabset-pills}
 #### code
 ```{bash, echo = FALSE}
-cat ./ex_04.Rmd
+cat ./data/ex_04.Rmd
 ```
 
 #### result
@@ -297,7 +297,7 @@ cat ./ex_04.Rmd
 
 #### code
 ```{bash, echo = FALSE}
-cat ./ex_05.Rmd
+cat ./data/ex_05.Rmd
 ```
 
 #### result
@@ -308,7 +308,7 @@ cat ./ex_05.Rmd
 ### 4.4 Pets or livestock?
 В RMarkdown каждому фрагменту кода можно дать имя (но избегайте пробелов и точек):
 ```{bash, echo = FALSE}
-cat ./ex_06.Rmd
+cat ./data/ex_06.Rmd
 ```
 
 Maëlle Salmon написал [отличный пост](http://www.masalmon.eu/2017/08/08/chunkpets/), почему полезно именовать фрагменты кода:

@@ -1,12 +1,17 @@
-name: ""
-navbar: 
+name: ''
+navbar:
   left:
-    - text: "1. документ"
-      href: 1_document.html
-    - text: "2. презентация"
-      href: 2_presentation.html
-    - text: "3. сайт, GitHub Pages"
-      href: 3_site_git.html
-    - text: "4. блог, книга"
-      href: 4_blog_book.html
+  - text: 1. документ
+    href: 1_document.html
+  - text: 2. презентация
+    href: 2_presentation.html
+  - text: 3. сайт, GitHub Pages
+    href: 3_site_git.html
+  - text: 4. блог, книга
+    href: 4_blog_book.html
 output_dir: docs
+output:
+  html_document:
+    lib_dir: site_libs
+    self_contained: no
+
